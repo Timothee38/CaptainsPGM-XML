@@ -49,6 +49,7 @@
 </destroyables>
  
 <filters>
+    </filter>
     <filter name="deny-icemelt">
         <not><all><!-- DENY if world and ice, ALLOW if not world, ABSTAIN if world and not ice-->
             <any><!-- ALLOW if world, DENY else -->
@@ -61,7 +62,12 @@
 </filters>
  
 <regions>
-    <apply block="deny-icemelt">
+   
+   <apply block="deny-blocks" message="You may not edit the void">
+         <cuboid min="-561,4,377" max="-629,24,231"/>
+   </apply>
+   
+   <apply block="deny-icemelt">
         <rectangle min="-635,232" max="-556,377" name="playable" />
     </apply>
     <apply block="deny-players" message="Please don't break the spawns!">
@@ -71,11 +77,6 @@
         <cylinder base="-571.5,10,349.5" height="6" radius="5"/> <!-- East -->
     </apply>
 </regions>
- 
- 
-<playable>
-    <region name="playable" />
-</playable>
  
  
 <kits>
@@ -125,7 +126,7 @@
     <item>obsidian</item>
 </itemremove>
  
-Specify that TNT ignites instantly when placed and does not destroy blocks.
+<!--Specify that TNT ignites instantly when placed and does not destroy blocks.-->
  
 <tnt>
     <instantignite>on</instantignite>
