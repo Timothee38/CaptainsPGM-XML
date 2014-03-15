@@ -1,0 +1,153 @@
+<map proto="1.3.1">
+	<name>Wool Bros</name>
+	<objective>Retrive the wool from the other teams wool room and place it in your own spawn</objective>
+	<authors>
+		<author contributation="Main idea, aesthetics">Timothee38</author>
+		<author contributation=" building, feedback">Runomo</author>
+	</authors>
+	<contributors>
+		<contributor contributation="XML">Captain_Elliott</contributor>
+		<contributor contributation="Map Name">Adrianito478</contributor>
+	</contributors>
+	<teams>
+		<team color="lime" max="12" max-overfill="15">Lime Team</team>
+		<team color="red" mx="12" max-overfill="15">Red Team</team>
+	</teams>
+	<kits>
+		<kit name="spawn">
+			<item slot="0">iron sword</item>
+			<item slot="1" enchantment="ARROW INFINITE; DIG SPEED:3">bow</item>
+			<item slot="2" enchantment="DURABILITY:2">iron pickaxe</item>
+			<item slot="3" enchantment="DURABILITY:2; DID SPEED:2">iron axe</item>
+			<item slot="4" amount="64">5</item>
+			<item slot="5" amount="64">350</item>
+			<item slot="6" amount="64">glass</item>
+			<item slot="7" amount="48">vines</item>
+		</kit>
+		<kit name="Red" parents="spawn">
+			<helmet color="993333">298</helmet>
+			<chestplate color="993333">299</chestplate>
+			<leggins color="993333">300</leggins>
+			<boots color="993333">301</boots>
+		</kit>
+		<kit name="Lime" parents="spawn">
+			<helmet color="7FCC19">298</helmet>
+			<chestplate color="7FCC19">299</chestplate>
+			<leggins color="7FCC19">300</leggins>
+			<boots color="7FCC19">301</boots>
+		</kit>
+		<kit name="JB">
+			<potion duration="4" amplifier="20">jump</potion>
+			<potion duration="4" amplifier="10">DAMAGE RESISTANCE</potion>
+		</kit>
+		<kit name="regen">
+			<potion duration="5" amplifier="2">REGENERATION</potion>
+		</kit>
+	</kits>
+	<spawns>
+		<spawn team="Red" yaw="0" safe="true">
+			<cuboid min="11,10,-96" max="19,13,-104"/>
+		</spawn>
+		<spawn team="Lime" yaw="-180" safe="true">
+			<cuboid min="18,10,8" max="10,13,16"/>
+		</spawn>
+		<defult yaw="0">
+			<cuboid min="18,54,-41" max="12,58,-47"/>
+		</defult>
+	</spawns>
+	<wools>
+		<wool team="Red" color="green">
+			<block>16,12,-98</block>
+		</wool>
+		<wool team="Red" color="lime">
+			<block>13,12,-98</block>
+		</wool>
+		<wool team="Lime" color="pink">
+			<block>16,12,10</block>
+		</wool>
+		<wool team="Lime" color="red">
+			<block>13,12,10</block>
+		</wool>
+	</wools>
+	<maxbuildheight>52</maxbuildheight>
+	<filters>
+		<filter name="only-red" parents="deny-players">
+			<allow><team>Red</team></allow>
+		</filter>
+		<filter name="only-lime" parents="deny-players">
+			<allow><team>Lime</team></allow>
+		</filter>
+		<filter name="no-spawner" parents="allow-break">
+			<deny><block>spawner</block></deny>
+		</filter>
+		<filter name="no-block-place" parents="deny-break">
+		</filter>
+	</filters>
+	<regions>
+		<cuboid name="regen" min="10,5,-39" max="19,8,-49"/>		
+		<cuboid name="all" min="-oo,-oo,-oo" max="oo,oo,oo"/>
+		<cubiod name="playable" min="-3,0,-134" max="32,52,46"/>
+
+		<union name="JB">
+			<cuboid name="JB1" min="21,4,-50" max="32,8,-38"/>
+			<cuboid name="JB2" min="8,4,-50" max="-3,8,-38"/>
+		</union>
+		<union name="bases">
+			<cuboid name="red" min="11,10,-96" max="19,13,-104"/>
+			<cuboid name="lime" min="18,10,8" max="10,13,16"/>
+		</union>
+		<union name="red-wool-rooms">
+			<cubiod name="green-wool" min="20,0,33" max="32,256,46"/>
+			<cuboid name="lime-wool" min="20,0,-121" max="32,256,-134"/>
+		</union>
+		<union name="lime-wool-rooms">
+			<cubiod name="pink-wool" min="9,0,-121" max="-3,256,-134"/>
+			<cubiod name="red-wool" min="20,0,-121" max="32,256,-134"/>
+		</union>
+		<apply block="no-spawner" message="You may not break spawners!">
+			<region name="all"/>
+		</apply>
+		<apply block="deny-blocks" message="You may not break blocks in your spawn!">
+			<region name="bases"/>
+		</apply>
+		<apply enter="only-red" message="You may not enter the enemy teams spawn!">
+			<cuboid min="11,10,-96" max="19,13,-104"/>
+		</apply>
+		<apply enter="only-lime" message="You may not enter the enemy teams spawn!">
+			<cuboid min="18,10,8" max="10,13,16"/>
+		</apply>
+		<apply block="deny-blocks" message="You may not buidl in the void!">
+			<cuboid min="10,0,24" max="19,256,46"/>
+		</apply>
+		<apply block="deny-blocks" message="You may not buidl in the void!">
+			<cuboid min="19,0,-112" max="10,15,-134"/>
+		</apply>
+		<apply kit="JB">
+			<region name="JB"/>
+		</apply>
+		<apply kit="regen">
+			<region name="regen"/>
+		</apply>
+	</regions>
+	<playable>
+    	<region name="main-area"/>
+	</playable>
+	<toolrepair>
+		<tool>iron sword</tool>
+		<tool>bow</tool>
+	</toolrepair>
+	<itemremove>
+		<item>298</item>
+		<item>299</item>
+		<item>300</item>
+		<item>301</item>
+		<item>5</item>
+		<item>glass</item>
+		<item>vines</item>
+	</itemremove>
+	<tnt>
+		<tntinstantignite>on</tntinstantignite>
+		<blockdamage>off</blockdamage>
+		<yield>0</yield>
+	</tnt>
+</map>
