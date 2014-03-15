@@ -1,0 +1,123 @@
+<map proto="1.3.0">
+
+<name>Inferno</name>
+<version>1.0</version>
+<objective>Control the point inside the volcano in the center of the map to win!</objective>
+
+<authors>
+	
+	<author>Captain_Elliott</author>
+
+</authors>
+
+<contributors>
+
+	<contributor="XML">Captain_Elliott</contributor>
+	<contributor="Help with map building and feedback">titandigger</contributor>
+	<contributor="Help with map building and feedback">_Dx</contributor>
+	<contributor="Map Feedback">blackstoneOpenDoor</contributor>
+
+</contributors>
+
+
+<teams>
+
+	<team color="dark red" max="16">black Team</team>
+	<team color="black" max="16">Black Team</team>
+
+</teams>
+
+<spawns>
+
+	<spawn team="black" kit="black">
+		<spawn yaw="132">
+			<cylinder base="1486.5,31,551.5" hight="0" radius="1"/> <!--East-->
+		</spawn>
+		<spawn yaw="-132">
+			<cylinder base="1451.5,31,551.5" hight="0" radius="1"/> <!--West-->
+		</spawn>
+	</spawn>
+
+	<spawn team="red" kit="red">
+		<spawn yaw="-45">
+			<cylinder base="1451.5,31,434.5" hight="0" radius="1"/> <!--East-->
+		</spawn>
+		<spaw£n yaw="45">
+			<cylinder base="1483.5,31,434.5" hight="0" radius="1"/> <!--West-->
+		</spawn>
+	</spawn>																																																													
+</spawns>
+
+<kits>
+	<kit name="spawn">
+		<item slot="0">diamond axe</item>
+		<item slot="1" enchantment="arrow_infinite">bow</item>
+		<item slot="2" amount="16">46</item>
+		<item slot="28">arrow</item>
+		<item slot="8">51</item>
+		<helmet>gold helmet</helmet>
+		<boots>gold boots</boots>
+		<potion duration="5" amplifier="1">heal</potion>
+		<potion duration="5" amplifier="1">damage_resistance</potion>
+		<potion duration="5" amplifier="1">fire_resistance</potion>
+	</kit>
+	<kit name="black" parents="spawn">
+		<chestplate color="191919" enchantment="protection_fire:2">leather chestplate</chestplate>
+		<leggings color="191919" enchantment="protection_fire:2">leather leggings</leggings>
+	</kit>
+	<kit name="red" parents="spawn">
+		<chestplate color="993333" enchantment="protection_fire:2">leather chestplate</chestplate>
+		<leggings color="993333" enchantment="protection_fire:2">leather leggings</leggings>
+	</kit>
+</kits>
+
+<toolrepair>
+	<tool>diamond axe</tool>
+	<tool>bow</tool>
+</toolrepair>
+
+<itemremove>
+	<item>gold helmet</item>
+	<item>gold boots</item>
+	<item>leather chestplate</item>
+	<item>leather leggings</item>
+	<item>51</item>
+	<item>arrow</item>
+	<item>glass bottle</item>
+</itemremove>
+
+<killreward>
+	<item amount="1">51</item>
+</killreward>
+
+<timelock>on</timelock>
+
+
+
+
+<filters>
+	<filter name="no-world" parents="deny-world"></filter>
+</filters>
+
+<playable>
+	<cuboid name="Map" min="1436,35" max="1497,65,567"/>
+</playable>
+
+<hill name="Magma Chamber" capture-time="45s" ratio="1">
+	<capture>
+		<cylinder base="1468,24,491" hight="2" redius="7"/>	
+	</capture>
+	<progress>
+		<cylinder base=""	/>																			
+																						
+															
+
+
+<score>
+	<limit>500</limit>
+	<king/>
+</score>
+
+
+
+																										
