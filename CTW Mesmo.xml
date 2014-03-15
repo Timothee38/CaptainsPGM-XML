@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<map proto="1.3.1">
+	<name>CTW Mesmo</name>
+	<version>1.0.0</version>
+	<objective>Retrive the wool from the enemy's side and bring it back to your vivtory monument</objective>
+
+	<authours>
+		<author contributation="Build/Aesthetics">LilJohn_</author>
+		<author contributation="Gameplay/Design">MossTree</author>
+	</authours>
+
+	<contributors>
+		<contributor contributation="XML">Captain_Elliott</contributor>
+	</contributors>
+
+	<include src="classes.xml"/>
+	<tutorial>
+    <stage title="Capture the Wool">
+        <message>
+            <line>`rThis map is a `a`lCapture the Wool `r(CTW) map</line>
+            <line>The objective is to grab the wool on the other team's side and return it to your base.</line>
+        </message>
+    </stage>
+    <stage title="Wool Room">
+    	<message>
+    		<line>`rThis is `5Purple Teams `rWool Room, it Houses the `2Green Wool</line>
+    		<line>`rThe `9Cyan Team `rMust retrive this wool room and bring it back to their side</line>
+    	</message>
+    	<teleport>
+            <point yaw="120">-745,15,1208</point>
+        </teleport>
+    </stage>
+    <stage title="Victory Monument">
+    	<message>
+    		<line>`rThis is Called a `lVictory Monument.</line>
+    		<line>`rThis is where you will put the wools you have collected</line>
+    		<line>`rOnce one team captue both wools and place them here, they win the match</line>
+    	</message>
+    	</line>
+    	<teleport>
+    		<point yaw="-90">-759,9,1140</point>
+    	</teleport>
+    </stage>
+    <stage title="Extra Supplies">
+    	<message>
+    		<line>`rHere is some extrea supplies for defenders</line>
+    	</message>
+    	<teleport>
+    		<point yaw="90">-754,9,1140</point>
+       	</teleport>
+     </stage>
+    	<stage title="Iron">
+    		<message>
+    			<line>`rHere is iron</line>
+    			<line>`rUse it to make armour and tools</line>
+    		</message>
+    		<teleport>
+    			<point yaw="90">-698,20,1140</point>
+    		</teleport>
+    	</stage>
+    </tutorial>le" 
+
+    <teams>
+    	<team color="dark purpmax="45">Purple Team</team>  
+    	<team color="dark aqua" max="45">Cyan Team</team>
+    </teams>
+
+    <wools team="purple">
+    	<wool color="red">
+        	<block>-747,10,1139</block>
+        </wool>
+    	<wool color="orange">
+       		<block>-747,10,1141</block>
+    	</wool>
+	</wools>
+	<wools team="cyan">
+    	<wool color="green">
+        	<block>-577,10,1141</block>
+    	</wool>
+    		<wool color="yellow">
+        		<block>-577,10,1139</block>
+   			</wool>
+	</wools>
+
+	<kits>
+		<kit name="spawn">
+			<item slot="0">iron sword</item>
+			<item slot="1">bow</item>
+			<item slot="2" enchantment="dig speed:2;durability:3">iron pickaxe</item>
+			<item slot="3" amount="64">steak</item>
+			<item slot="4" amount="64">5:1</item>
+			<ietm slot="4" amount="64">5:1</ietm>
+			<item slot="5" amount="64">glass</item>
+			<item slot="6" amount="64">ladder</item>
+			<item slot="7">322</item>
+		</kit>                
+	</kits>
+
+	<spawns>
+		<spawns team="purple" kit="spawn">
+			<spawn yaw="0">
+				<cuboid min="-753,9,1133" max="-757,9,1136"/>
+			</spawn>
+			<spawn yaw="90">
+				<cuboid min="-757,9,1138" max="-753,9,1143"/>
+			</spawn>
+			<spawn yaw="-180">
+				<cuboid min="-757,9,1147" max="-753,9,1144"/>
+			</spawn>
+		</spawns>
+		<spawns team="cyan" kit="spawn">
+			<spawn yaw="-180">	
+				<cuboid min="-569,9,1147" max="-565,9,1144"/>
+			</spawn>
+			<spawn yaw="0">
+				<cuboid min="-565,9,1133" max="-569,9,1136"/>
+			</spawn>
+			<spawn yaw="90">
+				<cuboid min="-565,9,1142" max="-569,9,1137"/>
+			</spawn>
+		</spawns>
+		<default yaw="179">
+			<block>-662,45,1140</block>
+		</default>
+	</spawns>
+
+	<filters>
+		<filter name="only-purple" pearents="deny-players">
+			<allow><team>purple</team></allow>
+		</filter>
+		<filter name="only-cyan" pearents="deny-players">
+			<allow><team>cyan</team></allow>
+		</filter>
+		<filter name="deny-blocks" pearents="deny-blocks">
+		</filter>
+		<flier name="no-void" parents="allow-all">
+			<deny><void/></deny>
+		</flier>
+	</filters>
+	<regions>
+		<cuboid name="purple-spawn" min="-770,8,1129" max="-746,18,1152"/>
+		<cuboid name="cyan-spawn" min="-555,8,1151" max="-579,18,1128"/>
+		<cuboid name="red-wool" min="-574,9,1079" max="-565,-oo,1066"/>
+		<cuboid name="orange-wool" min="-564,,1201" max="-573,-oo,1214"/>
+		<cuboid name="green-wool" min="-748,9,1201" max="-758,-oo,1214"/>
+		<cuboid name="yellow-wool" min="-758,9,1079" max="-748,-oo,1066"/>
+		<cuboid name="main-area" min="-565,0,1213" max="-759,41,1061"/>
+
+		<apply enter="only-cyan" message="You may not enter the enemy teams spawn!">
+			<region name="cyan-spawn"/>
+		</apply>
+		<apply enter="only-purple" message="You may not enter the enemy teams spawn!">
+			<region name="purple-spawn"/>
+		</apply>
+		<apply enter="only-purple" message="You may not enter your own wool room!">
+			<region name="red-wool"/>
+		</apply>
+		<apply enter="only-purple" message="You may not enter your own wool room!">
+			<region name="orange-wool"/>
+		</apply>
+		<apply enter="only-cyan" message="You may not enter your own wool room!">
+			<region name="green-wool"/>
+		</apply>
+		<apply enter="only-cyan" message="You may not enter your own wool room!">
+			<region name="yellow-wool"/>
+		</apply>
+		<apply block="deny-blocks" message="you may not modify the spawns!">
+			<region name="cyan-spawn"/>
+		</apply>
+		<apply block="deny-blocks" message="You may not modify the bases!">
+			<region name="purple-spawn"/>
+		</apply>
+		<apply block="no-void" message="You may not edit the void area">
+        	<negative>
+        		<region name="main-area"/>
+        	</negative>
+        </apply>
+	</regions>
+
+	<proximity-alarms>
+    	<proximity-alarm message="Enemy detected at Red Wool!" flare-radius="5">
+        	<region>
+            	<region name="red-wool"/>
+       	 	</region>
+        	<detect>
+            	<team>cyan</team>
+        	</detect>
+   	 	</proximity-alarm>
+   	 	<proximity-alarm message="Enemy detected at Orange Wool!" flare-radius="5">
+   	 		<region>
+   	 			<region name="orange-wool"/>
+   	 		</region>
+   	 		<detect>
+   	 			<team>cyan</team>
+   	 		</detect>
+   	 	</proximity-alarm>
+   	 	<proximity-alarm message="Enemy detected at Green Wool!" flare-radius="5">
+   	 		<region>
+   	 			<region name="green-wool"/>
+   	 		</region>
+   	 		<detect>
+   	 			<team>purple</team>
+   	 		</detect>
+   	 	</proximity-alarm>
+   	 	<proximity-alarm message="Enemy detected at Yellow Wool!" flare-radius="5">
+   	 		<region>
+   	 			<region name="yellow-wool"/>
+   	 		</region>
+   	 		<detect>
+   	 			<team>purple</team>
+   	 		</detect>
+   	 	</proximity-alarm>
+	</proximity-alarms>
+
+	<toolrepair>
+    	<tool>iron sword</tool>
+    	<tool>bow</tool>
+    	<tool>iron pickaxe</tool>
+	</toolrepair>
+	<toolremove>
+		<item>steak</item>
+		<item>ladder</item>
+	</toolremove>
+	<tnt>
+		<instantignite>on</instantignite>
+		<blockdamage>off</blockdamage>
+		<yield>0</yield>
+	</tnt>
+
+	<maxbuildheight>35</maxbuildheight>
+
+</map>
+
+	
