@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<map proto="1.3.2">
+	<name>Lignum</name>
+	<version>1</version>
+	<objective>Retrive the wool and break the two monuments from the emey side</objective>
+
+	<authors>
+		<author>_DDD</author>
+	</authors>
+
+	<contributors>
+    	<contributor contribution="XML">Captain_Elliott</contributor>
+    </contributors>
+
+    <include src="tutorial.xml"/>
+    	<tutorial>
+    		<stage title="Objectives">
+    			<message>
+    				<line>`rThis map has two objective types</line>
+    				<line>`r`aCapture the Wool `r or`aCTW `rfor short</line>
+    				<line>`r`eDestroy The Monument `r or `aDTC for short</line>
+    			</message>
+    		</stage>
+    		<stage title="CTW">
+    			<teleport>
+    				<point yaw="-90">-15,85,0</point>
+    			</teleport>
+    			<message>
+    				<line>`rHere is where `cred team `r need to get in order to retrive `alime `r wool</line>
+    				<line>`rThis is often refered to as a wool room</line> 
+    			</message>
+    		</stage>
+    		<stage title="Monuments">
+    			<teleport>
+    				<point yaw="179">-31,85,-17</point>
+    			</teleport>
+    			<message>
+    				<line>`Here is where `cred team `r need to break one of the monuments</line>
+    				<line>`rEach monument consitis of 1 piece of obsidian</line>
+    				<line>`rEach team must break both of the monuments</line>
+    			</message>
+    		</stage>
+    		<stage title="Victory Monument">
+    			<teleport>
+    				<point yaw="79">-21,82,-7</point>
+    			</teleport>
+    			<message>
+    				<line>`rHere is what is called a victory monument</line>
+    				<line>`rThis is wher you place the wool you retrive</line>
+    			</message>
+    		</stage>
+    	</tutorial>
+
+    		<teams>
+  				<team color="red" max="12">Red Team</team>
+   				<team color="blue" max="12">Blue Team</team>
+			</teams>
+
+			<kits>
+				<kit name="spawn">
+					<item slot="0">stone sword</item>
+					<item slot="1" enchantment="">bow</item>
+					<item slot="2">diamond pickaxe</item>
+					<item slot="3" amount="32" damage="1">17</item>
+					<item slot="4">arrow</item>
+					<item slot="6">322</item>
+					<item slot="7" amount="16">steak</item>
+					<item slot="8">265</item>
+					<potion duration="5" amplifier="1">heal</potion>
+				</kit>
+				<kit name="red">
+					<helmet color="#993333">298</helmet>
+					<chestplate color="#993333" enchantment="protection_enviromental">299</chestplate>
+					<leggings color="#993333">300</leggings>
+					<boots color="#993333">301</boots>
+				</kit>
+				<kit name="blue">
+					<helmet color="#334CB2">298</helmet>
+					<chestplate color="#334CB2" enchantment="protection_enviromental">299</chestplate>
+					<leggings color="#334CB2">300</leggings>
+					<boots color="#334CB2">301</boots>
+				</kit>
+			</kits>
+
+			<wools>
+   				<wool team="blue" color="yellow">                  
+      				 <block>-18,83,-8</block>
+ 				</wool>
+   				<wool team="red" color="lime">
+       				<block>-128,83,8</block>
+   				</wool>
+			</wools>
+
+			<destroyables name="Monument" materials="obsidian" completion="100%" mode-changes="true">
+    			<destroyable name="reight Monument" owner="red">
+      				<block>-114,85,29</block>
+    			</destroyable>
+    			<destroyable name="left Monument" owner="red">
+    				<block>-114,85,-29</block>
+    			</destroyable>
+    			<destroyable name="right Monument" owner="blue">
+       				<block>-32,85,-28</block>
+    			</destroyable>
+    			<destroyable name="left monument" owner="blue">
+    				<block>-32,85,29</block>
+    			</destroyable>
+			</destroyables>
+
+		<spawns>
+			<spawns team="red" kit="red" safe="true">
+				<spawn yaw="-45"><!--left-->
+					<circle center="-134,22" radius="1"/>
+				</spawn>
+				<spawn yaw="-132">
+					<circle center="-134,23" radius="1"/>
+				</spawn>
+			</spawns>
+			<spawns team="blue" kit="blue" safe="true">
+				<spawn yaw="132">
+					<circle center="-10,23" radius="1"/>
+				</spawn>
+				<spawn yaw="45">
+					<circle center="-10,-22" radius="1"/>
+				</spawn>
+			</spawns>
+			<default yaw="180">
+				<block>-72,109,-36</block>
+			</default>
+		</spawns>
+
+			<modes>
+    			<mode after="20m" material="gold block" name="`eGOLD MODE"/>
+			</modes>
+
+			<filters>
+				<filter name="only-blue" parents="deny-players">
+					<allow><team>blue</team></allow>
+				</filter>
+				<filter name="only-red" parents="deny-players">
+					<allow><team>red</team></allow>
+				</filter>
+			</filters>
+
+			<regions>
+				<rectangle name="main-area" min="3,-33" max="-149,35"/> 
+				<rectangle name="build-area" min="-16,-33" max="-130,35"/>
+				<union name="bases">
+					<cuboid name="red-left" min="-138,75,-16" max="-128,94,-26"/>
+					<cuboid name="red-right" min="-138,94,15" max="-128,75,26"/>
+					<cuboid name="blue-left" min="-8,75,16" max="-18,94,26"/>
+					<cuboid name="blue-right" min="-18,75,-26" max="-8,94,-16"/>
+				</union>
+				<union name="red-bases">
+					<cuboid name="red-left" min="-138,75,-16" max="-128,94,-26"/>
+					<cuboid name="red-right" min="-138,94,15" max="-128,75,26"/>
+				</union>
+				<union name="blue-bases">
+					<cuboid name="blue-left" min="-8,75,16" max="-18,94,26"/>
+					<cuboid name="blue-right" min="-18,75,-26" max="-8,94,-16"/>
+				</union>
+				<union name="wool-lanes">
+					<cuboid name="red" min="-131,-oo,2" max="-140,-oo,-2"/>
+					<cuboid name="blue" min="-15,-oo,-2" max="-6,-oo,2"/>
+				</union>
+				<union name="wool-rooms">
+					<cuboid name="red-room" min="-150,89,-5" max="-141,79,5"/>
+					<cuboid name="blue-room" min="4,89,-5" max="-9,75,5"/>
+				</union>
+
+				<apply block="deny-blocks" message="you may not place blocks outside the playing field!">
+					<negative>
+						<region name="build-area"/>
+					</negative>
+				</apply>
+				<apply block="allow-blocks">
+					<intersect> <!--Wool lane-->
+						<union name="wool-lanes"/>
+					</intersect>
+				<apply block="allow-blocks">
+					<intersect><!--Wool Room-->
+						<union name="wool-rooms"/>
+					</intersect>
+				</apply>
+				</apply>
+				<apply enter="only-blue" message="You may not enter the enemy base!">
+					<union name="blue-bases"/>
+				</apply>
+				<apply enter="only-red" message="You may not enter the enemy base!">
+					<union name="red-bases"/>
+				</apply>
+				<apply block="deny-blocks">
+					<union name="bases"/>
+				</apply>
+			</regions>
+
+			<itemremove>
+				<item>298</item>
+				<item>299</item>
+				<item>300</item>
+				<item>301</item>
+				<item damage="1">17</item>
+				<item>arrow</item>
+			</itemremove>
+
+			<toolrepair>
+				<tool>bow</tool>
+				<tool>272</tool>
+				<tool>278</tool>
+			</toolrepair>
+
+</map>
+
+
+
+
+
+
+
+
+
+
