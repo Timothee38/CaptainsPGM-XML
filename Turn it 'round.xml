@@ -1,139 +1,173 @@
 <?xml version="1.0"?>
 <map proto="1.3.1">
-<name>Turn it 'round</name>
-<version>1.1.0</version>
-<objective>Leack the enemys core and place down both wools</objective>
+    <name>Turn it 'round</name>
+    <version>1.1.0</version>
+    <objective>Leack the enemys core and place down both wools</objective>
+    
+    <authors>
+        <author>jobueschel2000</author>
+    </authors>
+    
+    <contributors>
+        <contributor contributaion="XML">Captain_Elliott</contributor>
+    <contributors>
+    
+    <include src="tutorial.xml"/>
+        	<tutorial>
+        		<stage title="Objectives">
+        			<message>
+        				<line>`rThis map has two objective types</line>
+        				<line>`r`aCapture the Wool `r or`aCTW `rfor short</line>
+        				<line>`r`eDestroy The Core `r or `aDTC for short</line>
+        			</message>
+        		</stage>
+        		<stage title="CTW">
+        			<teleport>
+        				<point yaw="0">-128,27,699</point>
+        			</teleport>
+        			<message>
+        				<line>`rHere is where `3cyan team `r need to get in order to retrive `4red`r wool</line>
+        				<line>`rThis is often refered to as a wool room</line> 
+        			</message>
+        		</stage>
+        		<stage title="Core">
+        			<teleport>
+        				<point yaw="-143">-223,26,290</point>
+        			</teleport>
+        			<message>
+        				<line>`Here is where `3cyan team `r need to break the core</line>
+        				<line>`rEach team must leak the core 5 blocks down</line>
+        			</message>
+        		</stage>
+        		<stage title="Victory Monument">
+        			<teleport>
+        				<point yaw="90">-208,24,684</point>
+        			</teleport>
+        			<message>
+        				<line>`rHere is what is called a victory monument</line>
+        				<line>`rThis is wher you place the wool you retrive</line>
+        			</message>
+        		</stage>
+        	</tutorial>
+        	
+    <teams>
+      <team color="dark purple" max="35">Purple Team</team>
+      <team color="dark aqua" max="35">Cyan Team</team>
+    </teams>
+    
+    <filters>
+      <filter name="only-cyan" parents="deny-players">
+        <allow><team>cyan</team></allow>
+      </filter>
+      <filter name="only-purple" parents="deny-player">
+        <allow><team>purple</team></allow>
+      </filter>
+      <filter name="no-void" parents="allow-all">
+            <deny><void/></deny>
+      </filter>
+    </filters>
+    
+    <regions>
+      <union name="purple-wool-rooms">
+        <cubiod name="red" min="-215,24,706" max="-223,oo,714"/>
+        <cuboid name="magenta" min="-214,24,662" max="-223,oo,654"/>
+      </union>
+      <union name="cyan-wool-rooms">
+        <cuboid name="light-blue" min="-371,24,706" max="-279,oo,714"/>
+        <cuboid name="blue" min="-271,24,662" max="-379,oo,654"/>
+      </union>
+      <union name="spawners">
+        <cylinder name="cyan-spawner" base="-392,21,684" radius="4" height="10"/>
+        <cylinder name="purple-spawner" base="-200,21,684" raduis="4" height="10"/>
+      </union>
+      
+      <apply enter="only-cyan" message="you may not enter your own wool room!">
+        <union name="purple-wool-rooms"/>
+      </apply>
+      <apply enter="only-purple" messgae="tou may not enter your own wool room!">
+        <union name="cyan-wool-rooms"/>
+      </apply>
+      <apply block="no-void" message="you may not edit the void area">
+        <negative>
+          <rectange min="oo" max="-oo"/>
+        </negative>
+      </apply>
+    </regions>
+    
+    <wools team="purple">
+      <wool color="light blue">
+        <block>-212,25,685</block>
+      </wool>
+      <wool color="blue">
+        <block>-212,25,683</block>
+      </wool>
+    </wools>
+    <wools team="cyan">
+      <wool color="magenta">
+        <block>-382,25,683</block>
+      </wool>
+      <wool color="red">
+        <block>-382,25,685</block>
+      </wool>
+    </wools>
+    
+    <cores material="obsidian" leak="5">
+      <core team="cyan"><cuboid min="-373,20,682" max="-377,26,686"/></core>
+      <core team="purple"><cuboid min="-217,20,682" max="-221,26,686"/></core>
+    </cores>
+    
+    <kits>
+      <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1">diamond pickaxe</item>
+        <item slot="2" enchatment="arrow infinite">bow</item>
+        <item slot="3">diamond</item>
+        <item slot="4" amount="64">155</item>
+        <item slot="5" amount="16">5:2</item>
+        <ietm slot="6" amount="32">carrot</ietm>
+        <ietm slot="7" amount="8">tnt</ietm>
+        <item slot="8" amount="4">redstone torch</item>
+        <item slot="29">arrow</item>
+        <helmet>298</helmet>
+        <chestplate>299</chestplate>
+        <leggings>300</leggings>
+        <boots>301</boots>
+        <potion duration="5" amplifier="1">damage resistance</potion>
+      </kit>
+    </kits>
+    
+    <toolrepair>
+        <tool>iron sword</tool>
+        <tool>bow</tool>
+        <tool>diamond pickaxe</tool>
+    </toolrepair>
+    
+    <itemremove>
+        <ietm>carrot</ietm>
+        <item>5:2</item>
+        <item>155</item>
+    </itemremove>
+    
+    <killreward>
+        <item>diamond</item>
+    </killreward>
+    
+    <tnt>
+        <instantignite>off</instantignite>
+        <blockdamage>off</blockdamage>
+        <yield>100</yield>
+    </tnt>
+    
+    <mobs>
+        <filter parents="deny-all">
+            <allow>
+                <mob>zombie</mob>
+                <spawn>spawner</spawn>
+            </allow>
+        </filter>
+    </mobs>
+    
+    <timelock>on</timelock>
 
-<authors>
-    <author>jobueschel2000</author>
-</aothors>
-
-<contributors>
-    <contributor contributaion="XML">Captain_Elliott</contributor>
-<contributors>
-
-<include src="tutorial.xml"/>
-    	<tutorial>
-    		<stage title="Objectives">
-    			<message>
-    				<line>`rThis map has two objective types</line>
-    				<line>`r`aCapture the Wool `r or`aCTW `rfor short</line>
-    				<line>`r`eDestroy The Core `r or `aDTC for short</line>
-    			</message>
-    		</stage>
-    		<stage title="CTW">
-    			<teleport>
-    				<point yaw="0">-128,27,699</point>
-    			</teleport>
-    			<message>
-    				<line>`rHere is where `3cyan team `r need to get in order to retrive `4red`r wool</line>
-    				<line>`rThis is often refered to as a wool room</line> 
-    			</message>
-    		</stage>
-    		<stage title="Core">
-    			<teleport>
-    				<point yaw="-143">-223,26,290</point>
-    			</teleport>
-    			<message>
-    				<line>`Here is where `3cyan team `r need to break the core</line>
-    				<line>`rEach team must leak the core 5 blocks down</line>
-    			</message>
-    		</stage>
-    		<stage title="Victory Monument">
-    			<teleport>
-    				<point yaw="90">-208,24,684</point>
-    			</teleport>
-    			<message>
-    				<line>`rHere is what is called a victory monument</line>
-    				<line>`rThis is wher you place the wool you retrive</line>
-    			</message>
-    		</stage>
-    	</tutorial>
-    	
-<teams>
-  <team color="dark purple" max="35">Purple Team</team>
-  <team color="dark aqua" max="35">Cyan Team</team>
-</teams>
-
-<filters>
-  <filter name="only-cyan" parents="deny-players">
-    <allow><team>cyan</team></allow>
-  </filter>
-  <filter name="only-purple" parents="deny-player">
-    <allow><team>purple</team></allow>
-  </filter>
-  <filter name="no-void" parents="allow-all">
-        <deny><void/></deny>
-  </filter>
-</filters>
-
-<regions>
-  <union name="purple-wool-rooms">
-    <cubiod name="red" min="-215,24,706" max="-223,oo,714"/>
-    <cuboid name="magenta" min="-214,24,662" max="-223,oo,654"/>
-  </union>
-  <union name="cyan-wool-rooms">
-    <cuboid name="light-blue" min="-371,24,706" max="-279,oo,714"/>
-    <cuboid name="blue" min="-271,24,662" max="-379,oo,654"/>
-  </union>
-  <union name="spawners">
-    <cylinder name="cyan-spawner" base="-392,21,684" radius="4" height="10"/>
-    <cylinder name="purple-spawner" base="-200,21,684" raduis="4" height="10"/>
-  </union>
-  
-  <apply enter="only-cyan" message="you may not enter your own wool room!">
-    <union name="purple-wool-rooms"/>
-  </apply>
-  <apply enter="only-purple" messgae="tou may not enter your own wool room!">
-    <union name="cyan-wool-rooms"/>
-  </apply>
-  <apply block="no-void" message="you may not edit the void area">
-    <negative>
-      <rectange min="oo" max="-oo"/>
-    </negative>
-  </apply>
-</regions>
-
-<wools team="purple">
-  <wool color="light blue">
-    <block>-212,25,685</block>
-  </wool>
-  <wool color="blue">
-    <block>-212,25,683</block>
-  </wool>
-</wools>
-<wools team="cyan">
-  <wool color="magenta">
-    <block>-382,25,683</block>
-  </wool>
-  <wool color="red">
-    <block>-382,25,685</block>
-  </wool>
-</wools>
-
-<cores material="obsidian" leak="5">
-  <core team="cyan"><cuboid min="-373,20,682" max="-377,26,686"/></core>
-  <core team="purple"><cuboid min="-217,20,682" max="-221,26,686"/></core>
-</cores>
-
-<kits>
-  <kit name="spawn">
-    <item slot="0">iron sword</item>
-    <item slot="1">diamond pickaxe</item>
-    <item slot="2" enchatment="arrow infinite">bow</item>
-    <item slot="3">diamond</item>
-    <item slot="4" amount="64">155</item>
-    <item slot="5" amount="16">5:2</item>
-    <ietm slot="6" amount="32">carrot</ietm>
-    <ietm slot="7" amount="8">tnt</ietm>
-    <item slot="8" amount="4">redstone torch</item>
-    <item slot="29">arrow</item>
-    <helmet>298</helmet>
-    <chestplate>299</chestplate>
-    <leggings>300</leggings>
-    <boots>301</boots>
-    <potion duration="5" amplifier="1">damage resistance</potion>
-  </kit>
-</kits>
-
-<!--Still Not finished-->
+    <maxbuildheight>50</maxbuildheight>
+</map>
