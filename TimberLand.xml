@@ -64,7 +64,9 @@
 <regions>
    
    <apply block="deny-blocks" message="You may not edit the void">
+      <negative>
          <cuboid min="-561,4,377" max="-629,24,231"/>
+      </negative>
    </apply>
    
    <apply block="deny-icemelt">
