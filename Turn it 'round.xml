@@ -5,7 +5,8 @@
     <objective>Leack the enemys core and place down both wools</objective>
     
     <authors>
-        <author>jobueschel2000</author>
+        <author contributation="Main Map Builder">jobueschel2000</author>
+        <author contributation="Co-Map Builder">alex632000</author>
     </authors>
     
     <contributors>
@@ -54,6 +55,18 @@
       <team color="dark purple" max="35">Purple Team</team>
       <team color="dark aqua" max="35">Cyan Team</team>
     </teams>
+    
+    <spawns>
+        <spawn team="cyan" kit="spawn" yaw="-90">
+            <block>-405,25,684</block>
+        </spawn>
+        <spawn team="purple" kit="spawn" yaw="90">
+            <block>-187,25,684</block>
+        </spawn>
+        <default yaw="0">
+            <block>-296,67,681</block>
+        </default>
+    </spawns>
     
     <filters>
       <filter name="only-cyan" parents="deny-players">
