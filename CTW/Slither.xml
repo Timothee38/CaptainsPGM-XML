@@ -63,9 +63,8 @@
          <helmet color="275f9f">298</helmet>
      </kit>
 </kits>
-
 <spawns>
-    <spawns team="blue "safe="true" kit="blue">
+    <spawns team="blue" safe="true" kit="blue">
       <!--Right Blue Spawn-->
       <spawn yaw="90">
         <block>121,61,108</block>
@@ -93,10 +92,10 @@
         <block>55,61,110</block>
     </spawn>
     </spawns>
-     <!--Red Right Spawn-->
-     <spawns team="red" safe="true" kit="red">
-         <spawn yaw="-90">
-             <block>53,61,-19</block>
+    <!--Red Right Spawn-->
+    <spawns team="red" safe="true" kit="red">
+        <spawn yaw="-90">
+            <block>53,61,-19</block>
          </spawn>
          <spawn yaw="0">
              <block>55,61,-221</block>
@@ -120,93 +119,83 @@
          <spawn yaw="-180">
              <block>119,61,-17</block>
          </spawn>
-     </spawns>
-  </spawns>
-  
-  <wools team="red">
-      <wool color="yellow">
-          <block>122,31,-20</block>
-      </wool>
-      <wool color="magenta">
-          <block>52,31,-20</block>
-      </wool>
-  </wools>
-  <wools team="blue">
-      <wool color="orange">
-          <block>52,31,108</block>
-      </wool>
-      <wool color="light blue">
-          <block>122,31,108</block>
-      </wool>
-  </wools>
-  
-  <tnt>
-    
+    </spawns>
+</spawns>
+<wools team="red">
+    <wool color="yellow">
+        <block>122,31,-20</block>
+    </wool>
+    <wool color="magenta">
+        <block>52,31,-20</block>
+    </wool>
+</wools>
+<wools team="blue">
+    <wool color="orange">
+        <block>52,31,108</block>
+    </wool>
+    <wool color="light blue">
+        <block>122,31,108</block>
+    </wool>
+</wools>
+<tnt>
     <instantignite>off</instantignite>
     <blockdamage>off</blockdamage>
     <yield>0</yield>
-  </tnt>
-  
-  <maxbuildheight>65</maxbuildheight>
-  
-  <filters>
-      <filter name="only-red" parents="deny-all">
-          <allow><team>red</team></allow>
-      </filter>
-      <filter name="only-blue" parents="deny-all">
-          <allow><team>blue</team></allow>
-      </filter>
-  </filters>
-  
-  <regions>
-      <union name="red-wool-rooms"> <!--Wool Rooms owned by red team-->
-          <cuboid name="orange-wool-room" min="77,34,-44" max="92,46,-54"/>
-          <cuboid name="lightblue-wool-room" min="98,25,-43" max="83,34,-53"/>
-      </union>
-      <union name="blue-wool-rooms"> <!--Wool rooms owned by blue team-->
-          <cuboid name="magenta" min="97,34,132" max="82,47,142"/>
-          <cuboid name="orange" min="76,25,131" max="92,34,143"/>
-      </union>
-      <union name="blue-spawns">
-          <cuboid min="116,28,111" max="116,oo,111"/>
-          <cuboid min="52,27,105" max="59,oo,111"/>
-      </union>
-      <union name="red-spawns">
-          <cuboid min="52,27,-23" max="59,oo,-17"/>
-          <cuboid min="122,27,-17" max="115,oo,-23"/>
-      </union>
-      
-      <apply enter="only-red" message="you may not enter your own wool room!">
-          <union name="blue-wool-rooms"/>
-      </apply>
-      <apply enter="only-blue" message="you may not enter your own wool room!">
-          <union name="red-wool-rooms"/>
-      </apply>
-      <apply enter="only-blue" message="you may not enter the enemy teams spawn!">
-          <union name="blue-spawns"/>
-      </apply>
-       <apply enter="only-red" message="you may not enter the enemy teams spawn!">
-          <union name="red-spawns"/>
-      </apply>
-      <apply block="deny-blocks" message="you may not edit the spawns!">
-          <union name="red-spawn"/>
-          <union name="blue-spawn"/>
-      </apply>
-  </regions>
-
-    <itemremove>
-        <item>298</item>
-        <item>307</item>
-        <item>304</item>
-        <item>309</item>
-        <item>159</item>
-    </itemremove>
-    
-    <toolrepair>
-        <tool>iron pickaxe</tool>
-        <tool>bow</tool>
-        <tool>iron axe</tool>
-        <tool>iron sword</tool>
-    </toolrepair>
-
+</tnt>
+<maxbuildheight>65</maxbuildheight>
+<filters>
+    <filter name="only-red">
+        <team>red</team>
+    </filter>
+    <filter name="only-blue">
+        <team>blue</team>
+    </filter>
+</filters>
+<regions>
+    <union name="red-wool-rooms"> <!--Wool Rooms owned by red team-->
+        <cuboid name="orange-wool-room" min="77,34,-44" max="92,46,-54"/>
+        <cuboid name="lightblue-wool-room" min="98,25,-43" max="83,34,-53"/>
+    </union>
+    <union name="blue-wool-rooms"> <!--Wool rooms owned by blue team-->
+        <cuboid name="magenta" min="97,34,132" max="82,47,142"/>
+        <cuboid name="orange" min="76,25,131" max="92,34,143"/>
+    </union>
+    <union name="blue-spawns">
+        <cuboid min="116,28,111" max="116,oo,111"/>
+        <cuboid min="52,27,105" max="59,oo,111"/>
+    </union>
+    <union name="red-spawns">
+        <cuboid min="52,27,-23" max="59,oo,-17"/>
+        <cuboid min="122,27,-17" max="115,oo,-23"/>
+    </union>
+    <apply enter="only-red" message="you may not enter your own wool room!">
+        <union name="blue-wool-rooms"/>
+    </apply>
+    <apply enter="only-blue" message="you may not enter your own wool room!">
+        <union name="red-wool-rooms"/>
+    </apply>
+    <apply enter="only-blue" message="you may not enter the enemy teams spawn!">
+        <union name="blue-spawns"/>
+    </apply>
+    <apply enter="only-red" message="you may not enter the enemy teams spawn!">
+        <union name="red-spawns"/>
+    </apply>
+    <apply block="deny-blocks" message="you may not edit the spawns!">
+        <union name="red-spawn"/>
+        <union name="blue-spawn"/>
+    </apply>
+</regions>
+<itemremove>
+    <item>298</item>
+    <item>307</item>
+    <item>304</item>
+    <item>309</item>
+    <item>159</item>
+</itemremove>
+<toolrepair>
+    <tool>iron pickaxe</tool>
+    <tool>bow</tool>
+    <tool>iron axe</tool>
+    <tool>iron sword</tool>
+</toolrepair>
 </map>
