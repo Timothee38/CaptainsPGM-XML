@@ -1,60 +1,29 @@
-<map proto="1.3.0">
-
+<map proto="1.3.2">
 <name>Inferno</name>
 <version>1.0</version>
-<objective>Control the point inside the volcano in the center of the map to win!</objective>
-
+<objective>
+	Control the point inside the volcano located at the center of the map to win!
+</objective>
 <authors>
-	
 	<author>Captain_Elliott</author>
-
 </authors>
-
 <contributors>
-
-	<contributor="XML">Captain_Elliott</contributor>
-	<contributor="Help with map building and feedback">titandigger</contributor>
-	<contributor="Help with map building and feedback">_Dx</contributor>
-	<contributor="Map Feedback">blackstoneOpenDoor</contributor>
-
+	<contributor contribution="XML">Captain_Elliott</contributor>
+	<contributor contribution="Help with map building and feedback">titandigger</contributor>
+	<contributor contribution="Help with map building and feedback">_Dx</contributor>
+	<contributor contribution="Map Feedback">blackstoneOpenDoor</contributor>
 </contributors>
-
-
 <teams>
-
 	<team color="dark red" max="16">black Team</team>
 	<team color="black" max="16">Black Team</team>
-
 </teams>
-
-<spawns>
-
-	<spawn team="black" kit="black">
-		<spawn yaw="132">
-			<cylinder base="1486.5,31,551.5" hight="0" radius="1"/> <!--East-->
-		</spawn>
-		<spawn yaw="-132">
-			<cylinder base="1451.5,31,551.5" hight="0" radius="1"/> <!--West-->
-		</spawn>
-	</spawn>
-
-	<spawn team="red" kit="red">
-		<spawn yaw="-45">
-			<cylinder base="1451.5,31,434.5" hight="0" radius="1"/> <!--East-->
-		</spawn>
-		<spaw£n yaw="45">
-			<cylinder base="1483.5,31,434.5" hight="0" radius="1"/> <!--West-->
-		</spawn>
-	</spawn>																																																													
-</spawns>
-
 <kits>
 	<kit name="spawn">
 		<item slot="0">diamond axe</item>
 		<item slot="1" enchantment="arrow_infinite">bow</item>
-		<item slot="2" amount="16">46</item>
+		<item slot="2" amount="16">TNT</item>
 		<item slot="28">arrow</item>
-		<item slot="8">51</item>
+		<item slot="8">fire</item>
 		<helmet>gold helmet</helmet>
 		<boots>gold boots</boots>
 		<potion duration="5" amplifier="1">heal</potion>
@@ -70,39 +39,41 @@
 		<leggings color="993333" enchantment="protection_fire:2">leather leggings</leggings>
 	</kit>
 </kits>
-
+<spawns team="black" kit="black">
+	<spawn yaw="132">
+		<cylinder base="1486.5,31,551.5" hight="0" radius="1"/> <!--East-->
+	</spawn>
+	<spawn yaw="-132">
+		<cylinder base="1451.5,31,551.5" hight="0" radius="1"/> <!--West-->
+	</spawn>
+</spawns>
+<spawns team="red" kit="red">
+	<spawn yaw="-45">
+		<cylinder base="1451.5,31,434.5" hight="0" radius="1"/> <!--East-->
+	</spawn>
+	<spawn yaw="45">
+		<cylinder base="1483.5,31,434.5" hight="0" radius="1"/> <!--West-->
+	</spawn>
+</spawns>
 <toolrepair>
 	<tool>diamond axe</tool>
 	<tool>bow</tool>
 </toolrepair>
-
 <itemremove>
 	<item>gold helmet</item>
 	<item>gold boots</item>
 	<item>leather chestplate</item>
 	<item>leather leggings</item>
-	<item>51</item>
+	<item>fire</item>
 	<item>arrow</item>
 	<item>glass bottle</item>
 </itemremove>
-
-<killreward>
-	<item amount="1">51</item>
-</killreward>
-
-<timelock>on</timelock>
-
-
-
-
 <filters>
-	<filter name="no-world" parents="deny-world"></filter>
+	<filter name="no-world" parents="deny-world"></filter><!-- Is this really needed?-->
 </filters>
-
 <playable>
 	<cuboid name="Map" min="1436,35" max="1497,65,567"/>
 </playable>
-
 <hill name="Magma Chamber" capture-time="45s" ratio="1">
 	<capture>
 		<cylinder base="1468,24,491" hight="2" redius="7"/>	
@@ -117,7 +88,10 @@
 	<limit>500</limit>
 	<king/>
 </score>
-
+<killreward>
+	<item>fire</item>
+</killreward>
+<timelock>on</timelock>
 
 
 																										
