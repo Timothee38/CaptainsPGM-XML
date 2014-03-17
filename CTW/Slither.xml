@@ -1,66 +1,52 @@
-<?xml version="1.0"?>
 <map proto="1.3.2">
-
-  <name>Slither</name>
-  <version>1.0</version>
-
-  <authors>
+<name>Slither</name>
+<version>1.0</version>
+<objective>
+    Capture the other team's two wools and place them on your victory monument
+</objective>
+<authors>
     <author>Theta_</author>
-  </authors>
-
-  <contributors>
+</authors>
+<contributors>
     <contributor contributation="XML">Captain_Elliott</contributor>
     <contributor contribution="General Help">ParaSpider</contributor>
     <contributor contributaion="Lane Design">TheSecret8</contributor>
     <contributor contributaion="Aesthetics, Feedback and Server">ParaPenguin</contributor>
-  </contributors>
-  <include src="classes.xml"/>
-          <tutorial>
-        		<stage title="CTW">
-        			<teleport>
-        				<point yaw="90">-99,37,136</point>
-        			</teleport>
-        			<message>
-        			  <line>`rThis map is a Capture the Wool `l(CTW) `rstyle map</line>
-        				<line>`rHere is where `cred team `r need to get in order to retrive `dMagenta`r wool</line>
-        				<line>`rThis is refered to as a wool room</line> 
-        			</message>
-        		</stage>
-        		<stage title="Victory Monument">
-        			<teleport>
-        				<point yaw="90">60,30,-19</point>
-        			</teleport>
-        			<message>
-        				<line>`rHere is what is called a victory monument</line>
-        				<line>`rThis is wher you place the wool you retrive</line>
-        			</message>
-        		</stage>
-        	</tutorial>
-        	
-  <teams>
+</contributors>
+<include src="classes.xml"/>
+<tutorial>
+    <stage title="CTW">
+        <teleport>
+            <point yaw="90">-99,37,136</point>
+        </teleport>
+        <message>
+            <line>`rThis map is a Capture the Wool `l(CTW) `rstyle map</line>
+            <line>`rHere is where `cred team `r need to get in order to retrive `dMagenta`r wool</line>
+            <line>`rThis is refered to as a wool room</line> 
+        </message>
+    </stage>
+    <stage title="Victory Monument">
+        <teleport>
+            <point yaw="90">60,30,-19</point>
+        </teleport>
+        <message>
+            <line>`rHere is what is called a victory monument</line>
+            <line>`rThis is wher you place the wool you retrive</line>
+        </message>
+    </stage>
+</tutorial>
+<teams>
     <team color="red" max="24" max-overfill="32">Red Team</team>
     <team color="blue" max="24" max-overfill="32">Blue Team</team>
-  </teams>
-  
-  <spawns>
-    <spawns team="blue "safe="true" kit="blue">
-      <!--Right Blue Spawn-->
-      <spawn yaw="90">
+</teams>
+<spawns team="blue "safe="true" kit="blue">
+    <!--Right Spawn-->
+    <spawn yaw="90">
         <block>121,61,108</block>
-      </spawn>
-      <spawn yaw="180">
-        <block>119,61,110<</block>
-      </spawn>
-      <spawn yaw="90">
-        <block>117,61,108</block>
-      </spawn>
-      <spawn yaw="0">
-        <block>119,61,106</block>
-      </spawn>
-    </spawns>
-    <!--Left Blue Spawn-->
-     
-  </spawns>
+    </spawn>
+    <spawn yaw=""
+</spawns>
+</spawns>
 
 
 </map>
