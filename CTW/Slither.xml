@@ -10,9 +10,9 @@
 
   <contributors>
     <contributor contributation="XML">Captain_Elliott</contributor>
-    <contributor>ParaSpider</contributor>
-    <contributor>TheSecret8</contributor>
-    <contributor>ParaPenguin</contributor>
+    <contributor contribution="General Help">ParaSpider</contributor>
+    <contributor contributaion="Lane Design">TheSecret8</contributor>
+    <contributor contributaion="Aesthetics, Feedback and Server">ParaPenguin</contributor>
   </contributors>
   <include src="classes.xml"/>
           <tutorial>
@@ -43,7 +43,14 @@
   </teams>
   
   <spawns>
-    <spawn
+    <spawns team="blue "safe="true" kit="blue">
+      <!--Right Spawn-->
+      <spawn yaw="90">
+        <point>121,61,108</point>
+      </spawn>
+      <spawn yaw=""
+    </spawns>
+     
   </spawns>
 
 
