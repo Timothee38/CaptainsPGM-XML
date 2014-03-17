@@ -1,5 +1,50 @@
 <?xml version="1.0"?>
 <map proto="1.3.2">
 
+  <name>Slither</name>
+  <version>1.0</version>
+
+  <authors>
+    <author>Theta_</author>
+  </authors>
+
+  <contributors>
+    <contributor contributation="XML">Captain_Elliott</contributor>
+    <contributor>ParaSpider</contributor>
+    <contributor>TheSecret8</contributor>
+    <contributor>ParaPenguin</contributor>
+  </contributors>
+  <include src="classes.xml"/>
+          <tutorial>
+        		<stage title="CTW">
+        			<teleport>
+        				<point yaw="90">-99,37,136</point>
+        			</teleport>
+        			<message>
+        			  <line>`rThis map is a Capture the Wool `l(CTW) `rstyle map</line>
+        				<line>`rHere is where `cred team `r need to get in order to retrive `dMagenta`r wool</line>
+        				<line>`rThis is refered to as a wool room</line> 
+        			</message>
+        		</stage>
+        		<stage title="Victory Monument">
+        			<teleport>
+        				<point yaw="90">60,30,-19</point>
+        			</teleport>
+        			<message>
+        				<line>`rHere is what is called a victory monument</line>
+        				<line>`rThis is wher you place the wool you retrive</line>
+        			</message>
+        		</stage>
+        	</tutorial>
+        	
+  <teams>
+    <team color="red" max="24" max-overfill="32">Red Team</team>
+    <team color="blue" max="24" max-overfill="32">Blue Team</team>
+  </teams>
+  
+  <spawns>
+    <spawn
+  </spawns>
+
 
 </map>
