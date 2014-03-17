@@ -13,7 +13,7 @@
     <contributor contributaion="Lane Design">TheSecret8</contributor>
     <contributor contributaion="Aesthetics, Feedback and Server">ParaPenguin</contributor>
 </contributors>
-<include src="classes.xml"/>
+<include src="tutorial.xml"/>
 <tutorial>
     <stage title="CTW">
         <teleport>
@@ -39,6 +39,7 @@
     <team color="red" max="24" max-overfill="32">Red Team</team>
     <team color="blue" max="24" max-overfill="32">Blue Team</team>
 </teams>
+<!--Kits -->
 <spawns team="blue "safe="true" kit="blue">
     <!--Right Spawn-->
     <spawn yaw="90">
@@ -46,6 +47,7 @@
     </spawn>
     <spawn yaw=""
 </spawns>
+<!--red spawns-->
 </spawns>
 
 
