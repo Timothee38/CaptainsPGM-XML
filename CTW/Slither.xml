@@ -140,11 +140,14 @@
       </wool>
   </wools>
   
-  <maxbuildheight></maxbuildheight> <!--Need this-->
+  <tnt>
+    
+    <instantignite>off</instantignite>
+    <blockdamage>off</blockdamage>
+    <yield>0</yield>
+  </tnt>
   
-  <killreward>
-      <item></item> <!--need this if there is one-->
-  </killreward>
+  <maxbuildheight>65</maxbuildheight>
   
   <filters>
       <filter name="only-red" parents="deny-all">
@@ -155,6 +158,41 @@
       </filter>
   </filters>
   
+  <regions>
+      <union name="red-wool-rooms"> <!--Wool Rooms owned by red team-->
+          <cuboid name="orange-wool-room" min="77,34,-44" max="92,46,-54"/>
+          <cuboid name="lightblue-wool-room" min="98,25,-43" max="83,34,-53"/>
+      </union>
+      <union name="blue-wool-rooms"> <!--Wool rooms owned by blue team-->
+          <cuboid name="magenta" min="97,34,132" max="82,47,142"/>
+          <cuboid name="orange" min="76,25,131" max="92,34,143"/>
+      </union>
+      <union name="blue-spawns">
+          <cuboid min="116,28,111" max="116,oo,111"/>
+          <cuboid min="52,27,105" max="59,oo,111"/>
+      </union>
+      <union name="red-spawns">
+          <cuboid min="52,27,-23" max="59,oo,-17"/>
+          <cuboid min="122,27,-17" max="115,oo,-23"
+      </union>
+      
+      <apply enter="only-red" message="you may not enter your own wool room!">
+          <union name="blue-wool-rooms"/>
+      </apply>
+      <apply enter="only-blue" message="you may not enter your own wool room!">
+          <union name="red-wool-rooms"/>
+      </apply>
+      <apply enter="only-blue" message="you may not enter the enemy teams spawn!">
+          <union name="blue-spawns"/>
+      </apply>
+       <apply enter="only-red" message="you may not enter the enemy teams spawn!">
+          <union name="red-spawns"/>
+      </apply>
+      <apply block="deny-blocks" message="you may not edit the spawns!">
+          <union name="red-spawn"/>
+          <union name="blue-spawn"/>
+      </apply>
+  </regions>
 
 
 </map>
