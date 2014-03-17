@@ -71,7 +71,7 @@
         <block>121,61,108</block>
       </spawn>
       <spawn yaw="180">
-        <block>119,61,110<</block>
+        <block>119,61,110</block>
       </spawn>
       <spawn yaw="90">
         <block>117,61,108</block>
@@ -122,6 +122,36 @@
          </spawn>
      </spawns>
   </spawns>
+  
+  <wools team="red">
+      <wool color="yellow">
+          <block>122,31,-20</block>
+      </wool>
+      <wool color="magenta">
+          <block>52,31,-20</block>
+      </wool>
+  </wools>
+  <wools team="blue">
+      <wool color="orange">
+          <block>52,31,108</block>
+      </wool>
+      <wool color="light blue">
+          <block>122,31,108</block>
+      </wool>
+  </wools>
+  
+  <filters>
+      <filter name="only-red" parents="deny-all">
+          <allow><team>red</team></allow>
+      </filter>
+      <filter name="only-blue" parents="deny-all">
+          <allow><team>blue</team></allow>
+      </filter>
+  </filters>
+  
+  <regions>
+      <cuboid name="magenta-wool-room" min="" max=""/>
+  </regions>
 
 
 </map>
