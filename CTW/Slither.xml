@@ -39,16 +39,89 @@
     <team color="red" max="24" max-overfill="32">Red Team</team>
     <team color="blue" max="24" max-overfill="32">Blue Team</team>
 </teams>
-<!--Kits -->
-<spawns team="blue "safe="true" kit="blue">
-    <!--Right Spawn-->
-    <spawn yaw="90">
+
+<kits>
+    <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1" enchantment="arrow infinite">bow</item>
+        <item slot="2" enchantment="dig speed; durability:10">iron pickaxe</item>  
+        <item slot="3" enchantment="durability:10">iron axe</item>
+        <item slot="4" amount="3">322</item>
+        <item slot="5" amount="3">396</item>
+        <item slot="7" amount="16">17:1</item>
+        <item slot="28">arrow</item>
+        <chestplate enchantment="protection explosion; protection projectile">307</chestplate>
+        <leggings>304</leggings>
+        <boots enchatment="protection fall">309</boots>
+     </kit>
+     <kit name="red" parent="spawn">
+         <item slot="8" amount="64">159:14</item>
+         <helmet color="9f2727">298</helmet>
+     </kit>
+     <kit name="blue" parent="spawn">
+         <item slot="8" amount="64">159:11</item>
+         <helmet color="275f9f">298</helmet>
+     </kit>
+</kits>
+
+<spawns>
+    <spawns team="blue "safe="true" kit="blue">
+      <!--Right Blue Spawn-->
+      <spawn yaw="90">
         <block>121,61,108</block>
+      </spawn>
+      <spawn yaw="180">
+        <block>119,61,110<</block>
+      </spawn>
+      <spawn yaw="90">
+        <block>117,61,108</block>
+      </spawn>
+      <spawn yaw="0">
+        <block>119,61,106</block>
+      </spawn>
+    <!--Left Blue Spawn-->
+    <spawn yaw="90">
+        <block>53,61,108</block>
     </spawn>
-    <spawn yaw=""
-</spawns>
-<!--red spawns-->
-</spawns>
+    <spawn yaw="0">
+        <block>55,61,106</block>
+    </spawn>
+    <spawn yaw="90">
+        <block>57,61,108</block>
+    </spawn>
+    <spawn yaw="-180">
+        <block>55,61,110</block>
+    </spawn>
+    </spawns>
+     <!--Red Right Spawn-->
+     <spawns team="red" safe="true" kit="red">
+         <spawn yaw="-90">
+             <block>53,61,-19</block>
+         </spawn>
+         <spawn yaw="0">
+             <block>55,61,-221</block>
+         </spawn>
+         <spawn yaw="90">
+             <block>57,61,-19</block>
+         </spawn>
+         <spawn yaw="180">
+             <block>55,61,-17</block>
+         </spawn>
+         <!--ref Left Spawn-->
+         <spawn yaw="-90">
+             <block>117,61,-19</block>
+         </spawn>
+         <spawn yaw="0">
+             <block>119,61,-21</block>
+         </spawn>
+         <spawn yaw="90">
+             <block>121,61,-19</block>
+         </spawn>
+         <spawn yaw="-180">
+             <block>119,61,-17</block>
+         </spawn>
+     </spawns>
+  </spawns>
 
 
 </map>
