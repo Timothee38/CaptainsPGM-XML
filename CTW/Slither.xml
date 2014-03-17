@@ -194,5 +194,19 @@
       </apply>
   </regions>
 
+    <itemremove>
+        <item>298</item>
+        <item>307</item>
+        <item>304</item>
+        <item>309</item>
+        <item>159</item>
+    </itemremove>
+    
+    <toolrepair>
+        <tool>iron pickaxe</tool>
+        <tool>bow</tool>
+        <tool>iron axe</tool>
+        <tool>iron sword</tool>
+    </toolrepair>
 
 </map>
