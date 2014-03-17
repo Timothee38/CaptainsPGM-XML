@@ -44,12 +44,21 @@
   
   <spawns>
     <spawns team="blue "safe="true" kit="blue">
-      <!--Right Spawn-->
+      <!--Right Blue Spawn-->
       <spawn yaw="90">
-        <point>121,61,108</point>
+        <block>121,61,108</block>
       </spawn>
-      <spawn yaw=""
+      <spawn yaw="180">
+        <block>119,61,110<</block>
+      </spawn>
+      <spawn yaw="90">
+        <block>117,61,108</block>
+      </spawn>
+      <spawn yaw="0">
+        <block>119,61,106</block>
+      </spawn>
     </spawns>
+    <!--Left Blue Spawn-->
      
   </spawns>
 
