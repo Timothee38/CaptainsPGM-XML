@@ -140,6 +140,12 @@
       </wool>
   </wools>
   
+  <maxbuildheight></maxbuildheight> <!--Need this-->
+  
+  <killreward>
+      <item></item> <!--need this if there is one-->
+  </killreward>
+  
   <filters>
       <filter name="only-red" parents="deny-all">
           <allow><team>red</team></allow>
@@ -149,9 +155,6 @@
       </filter>
   </filters>
   
-  <regions>
-      <cuboid name="magenta-wool-room" min="" max=""/>
-  </regions>
 
 
 </map>
