@@ -173,7 +173,7 @@
       </union>
       <union name="red-spawns">
           <cuboid min="52,27,-23" max="59,oo,-17"/>
-          <cuboid min="122,27,-17" max="115,oo,-23"
+          <cuboid min="122,27,-17" max="115,oo,-23"/>
       </union>
       
       <apply enter="only-red" message="you may not enter your own wool room!">
