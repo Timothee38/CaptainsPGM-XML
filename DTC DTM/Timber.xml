@@ -49,13 +49,13 @@
                 <cuboid min="1041,18.0,1607" max="1039,18.0,1605"/>    
     </spawn>
     <default yaw="90">
-        <cuboid min=873,65.0,1513" max="872,65.0,1515"/>
+        <cuboid min="873,65.0,1513" max="872,65.0,1515"/>
     </default>
 </spawns>
  
 <destroyables name="Monument" materials="quartz" completion="100%" mode-changes="true">
     <destroyable owner="blue">
-       <cuboid min="998,33.0,1662" max="1008,23.0,1662/>
+       <cuboid min="998,33.0,1662" max="1008,23.0,1662"/>
     </destroyable>
     <destroyable owner="red">
            <cuboid min="747,33.0,1549" max="737,23.0,1549"/>
@@ -65,5 +65,36 @@
 <modes>
     <mode after="15m" material="emerald block"/>
 </modes>
+
+<regions>
+
+ <cuboid name="main-area" min="" max=""/> <!--Add map area in here -->
+ 
+ <union name="spawns">
+  <cuboid name="red-spawn" min="" max=""/> <!--Need coords-->
+  <cuboid name="blue-spawn" min="" max=""/> <!--Need coords-->
+ </union>
+ 
+ <apply block="deny-blocks" message="you may not plays blocks in the void!">
+  <negative>
+   <region name="main-area"/>
+  </negative>
+ </apply>
+ 
+ <apply block="deny-blocks" message="You may not edit the spawns">
+  <union name="spawns"/>
+ </apply>
+ 
+ <apply enter="deny-players" messgae="you may not enter the enemy spawn!">
+  <allow><team>red</team></allow>
+  <region name="red-spawn"/>
+ </apply>
+ 
+ <apply enter="deny-players" messgae="you may not enter the enemy spawn!">
+  <allow><team>blue</team></allow>
+  <region name="blue-spawn"/>
+ </apply>
+ 
+</regions> 
  
 </map>
