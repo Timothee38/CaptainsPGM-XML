@@ -2,4 +2,19 @@
 <map proto="1.3.1">
   <name>Acheron</name>
   <verion>1.0.1</version>
+  <objective>Retrive the two wools from the enemy side and leak the entre core!</objective>
+  
+  <authors>
+    <author contributation="Main Map Building and XML">Captain_Elliott</author>
+    <author contributation="Main Map builder and Aesthetics">titandigger</author>
+    <author contributation="Map Builder and Feedback">Ozillion</author>
+  </authors>
+  
+  <contributors>
+    <contributor contributation="Feedback">Lexar500</contributor>
+    <contributor contributation="Feedback and Minior Building">pwnedrs</contributor>
+    <contributor contributation="Feedback">RedstoneOpenDoor</contributor>
+  </contributors>
+      
+      
 </map>
