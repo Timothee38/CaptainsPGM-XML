@@ -27,7 +27,7 @@
       <line>`rThis map is also a `7Destroy the Core `r `9(DTC)</line>
       <line>`rLeak the enemy core</line>
     </stage>
-    <stage="Wool Room">
+    <stage title="Wool Room">
       <teleport>
         <point yaw="-90">236,22,1086</point>
       </teleport>
@@ -61,6 +61,39 @@
       <line>The middle two blocks of iron will regenerate to avoid no iron in the event of a long game</line>
     </stage>
   </tutorial>
-      
+  
+  <wools team="green">
+    <wool color="orange">
+      <block>182,11,1281</block>
+    </wool>
+    <wool color="purple">
+      <block>180,11,1281</block>
+    </wool>
+  </wools>
+  <wools team="purple">
+    <wool color="lime">
+      <block>180,11,983</block>
+    </wool>
+    <wool color="pink">
+      <block>182,11,983</block>
+    </wool>
+  </wools>
+  
+  <cores material="obsidian" leak="4" mode-changes="true">
+    <core team="green"><cuboid min="183,15,1104" max="178,21,1109"/></core>
+    <core team="purple"><cuboid min="178,15,1161" max="184,21,1155"/></core>
+  </cores>
+  
+  <modes>
+    <mode after="15m" material="redstone block" name="`4Redstone Mode!"/>
+    <mode after="25m" material="gold block" name="`6Gold mode!"/>
+    <mode after="45m" material="glass" name="Glass Mode!"/>
+  </modes>
+  
+  <teams>
+    <team color="green" max="64" max-overfill="100">Green Team</team>
+    <team color="purple" max="64" max-overfill="100">Purple Team</team>
+  </teams>
+    
       
 </map>
