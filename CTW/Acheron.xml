@@ -165,7 +165,30 @@
     </rule>
   </blockdrops>
   
-  <filters></filters>
+  <filters>
+    <filter name="only-green" parents="deny-players">
+      <allow><team>green</team></allow>
+    </filter>
+    
+    <filter name="only-purple" parents="deny-players">
+      <allow><team>purple</team></allow>
+    </filter>
+    
+    <filter name="only-iron" parnets="deny-blocks">
+      <allow><block>iron block</block></allow>
+    </filter>
+    
+    <filter name="wool-room-break" parents="deny-blocks">
+    <allow>
+    <block>gold block</block>
+    <block>diamond block</block>
+    </allow>
+    <filter>
+
+    <filter name="no-void" parents="allow-all">
+        <deny><void/></deny>
+    </filter>
+  </filters>
   
   <regions>
     <union name="purple-wool-rooms">
@@ -176,6 +199,43 @@
       <cuboid name="orange" min="256,10,1093" max="243,20,1080"/>
       <cuboid name="purple" min="119,10,1092" max="107,20,1080"/>
     </union>
+    
+    <apply block="only-iron" messgae="You may only break iron in the spawns">
+      <rectangle name="green-spawn" min="143,980" max="219,1,1007"/>
+      <rectangle name="purple-spawn" min="219,1284" max="143,1257"/>
+    </apply>
+    
+    <apply enter="only-green" message="You may not enter your own teams wool room">
+      <union name="green-wool-rooms"> <!--Green Team neeeds to get to these rooms-->
+      <cylinder name="lime-wool-room" centre="113,10,1178" radius="8" height="20"/>
+      <cylinder name="pink-wool-room" centre="249,10,1178" radius="8" height="20"/>
+      </union>
+    </apply>
+    
+    <apply enter="only-purple" message="You may not enter your own teams wool room">
+      <union mame="purple-wool-rooms">
+        <cylinder name="orange-wool-room" centre="249,10,1086" radius="8" height="20"/>
+        <cylinder name="purple-wool-room" centre="113,10,1086" radius="8" height="20"/>
+      </union>
+    </apply>
+    
+    <apply block="wool-room-break" message="you may only break gold and diamond blocks in the wool room to gain loot!">
+      <union mame="wool-rooms">
+        <cylinder name="orange-wool-room" centre="249,10,1086" radius="8" height="20"/>
+        <cylinder name="purple-wool-room" centre="113,10,1086" radius="8" height="20"/>
+        <cylinder name="lime-wool-room" centre="113,10,1178" radius="8" height="20"/>
+        <cylinder name="pink-wool-room" centre="249,10,1178" radius="8" height="20"/>
+      </union>
+    </apply>
+    
+    <apply block="no-void" messgae="you may not edit the void!">
+    <negative>
+      <rectangle min="-oo,oo" max="oo,-oo"/>
+    </negative>
+    </apply>
+    
   </regions>
+      
+  <timelock>on</timelock>
       
 </map>
