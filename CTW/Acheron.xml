@@ -94,6 +94,88 @@
     <team color="green" max="64" max-overfill="100">Green Team</team>
     <team color="purple" max="64" max-overfill="100">Purple Team</team>
   </teams>
-    
+  
+  <kits>
+    <kit name="green">
+      <helmet color="667f33">298</helmet>
+    </kit>
+    <kit name="purple">
+      <helmet color="7f3fb2">298</helmet>
+    </kit>
+  </kits>
+  
+  <spawns>
+    <spawn team="green">
+      <cuboid min="179,10,990" max="183,10,994"/>
+    </spawn>
+    <spawn team="pruple">
+      <cuboid min="179,10,1270" max="183,10,994"/>
+    </spawn>
+    <default>
+      <circle centre="291,61,1132" radiud="3"/>
+    </default>
+  </spawns>
+  
+  <renewables>
+    <renewable rate="0.5" grow="true" particles="false" sound="fasle" avoid-entities="true">
+      <region>
+        <union name="renewable iron">
+          <cuboid min="202,10,986" max="210,12,988"/>
+          <cuboid min="152,10,986" max="159,12,988"/>
+          <cuboid min="210,10,1278" max="202,12,1276"/>
+          <cuboid min="152,10,1276" max="160,12,1278"/>
+        </union>
+      </region>
+      <renew>iron block</renew>
+      <replace>air</replace>
+    </renewable>
+  </renewables>
+  
+  <blockdrops>
+    <rule>
+      <region>
+        <union name="purple-wool-rooms"/>
+        <union name="green-wool-rooms"/>
+      </region>
+      <filter>
+        <block>diamond block</block>
+      </filter>
+      <drops>
+        <item>311</item>
+        <item damage="8194" potions="speed:1200:1:fasle"></item>
+        <item amount="64">322</item>
+      </drops>
+      <replacment>diamond block</replacment>
+      <wrongtool>false</wrongtool>
+    </rule>
+     <rule>
+      <region>
+        <union name="purple-wool-rooms"/>
+        <union name="green-wool-rooms"/>
+      </region>
+      <filter>
+        <block>gold block</block>
+      </filter>
+      <drops>
+        <item enchantment="arrow damage;arrow knockback">bow</item>
+        <item amount="128">arrow</item>
+      </drops>
+      <replacment>gold block</replacment>
+      <wrongtool>false</wrongtool>
+    </rule>
+  </blockdrops>
+  
+  <filters></filters>
+  
+  <regions>
+    <union name="purple-wool-rooms">
+      <cuboid name="pink" min="243,10,1172" max="254,20,1183"/>
+      <cuboid name="lime" min="106,10,1171" max="119,20,1184"/>
+    <union>
+    <union name="green-wool-rooms">
+      <cuboid name="orange" min="256,10,1093" max="243,20,1080"/>
+      <cuboid name="purple" min="119,10,1092" max="107,20,1080"/>
+    </union>
+  </regions>
       
 </map>
