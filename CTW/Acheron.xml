@@ -14,7 +14,53 @@
     <contributor contributation="Feedback">Lexar500</contributor>
     <contributor contributation="Feedback and Minior Building">pwnedrs</contributor>
     <contributor contributation="Feedback">RedstoneOpenDoor</contributor>
+    <contributor contributation="Building spawn">cookey29</contributor>
   </contributors>
+  
+  <include src="tutorial.xml"/>
+  <tutorial>
+    <stage title="CTW">
+      <line>`rThis is a `aCapture the Wool `r` c(CTW) `rmap</line>
+      <line>`rCapture both wools from the enemy side and bring them back</line>
+    </stage>
+    <stage title="DTC">
+      <line>`rThis map is also a `7Destroy the Core `r `9(DTC)</line>
+      <line>`rLeak the enemy core</line>
+    </stage>
+    <stage="Wool Room">
+      <teleport>
+        <point yaw="-90">236,22,1086</point>
+      </teleport>
+      <line>This is a wool room</line>
+      <line>You must come here in order to retrive the wool</line>
+    </stage>
+    <stage title="Wool Room Loot">
+      <teleport>
+        <point yaw="-50">155,10,1087</point>
+      </teleport>
+      <line>To gain the loot break the gold and diamond blocks</line>
+    </stage>
+    <stage title="Victory Monument">
+      <teleport>
+        <point yaw="177">181,10,985</point>
+      </teleport>
+      <line>Place the wools you retrive here</line>
+    </stage>
+    <stage title="core">
+      <teleport>
+        <point yaw="0">181,16,1097</point>
+      </teleport>
+      <line>Break a block of the core to leak lava</line>
+      <line>Lava needs to leak 4 blocks in order for it to be completed</line>
+    </stage>
+    <stage title="iron">
+      <teleport>
+        <point yaw="90">168,14,987</point>
+      </teleport>
+      <line>Use this iron to make armour and tools</line>
+      <line>The middle two blocks of iron will regenerate to avoid no iron in the event of a long game</line>
+    </stage>
+  </tutorial>
       
       
 </map>
