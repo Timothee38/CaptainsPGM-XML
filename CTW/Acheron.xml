@@ -112,7 +112,7 @@
       <cuboid min="179,10,1270" max="183,10,994"/>
     </spawn>
     <default>
-      <circle centre="291,61,1132" radiud="3"/>
+      <circle centre="291,61,1132" radius="3"/>
     </default>
   </spawns>
   
@@ -238,7 +238,7 @@
       <portal z="33" filter="only-green"> <!--Goes from green spawn to main island-->
         <point>181,10,1001</point>
       </portal>
-      <portal x=""@181"" y="@9.5" z="@1000" filter="only-green"><!--Back to green spawn-->
+      <portal x="@181" y="@9.5" z="@1000" filter="only-green"><!--Back to green spawn-->
         <cuboid min="180,10,1034" max="182,11,1034"/>
       </portal>
       <portal x="@160" y="@19.5" z="@1062" filter="only-green"><!--To right second floor from right arch-->
