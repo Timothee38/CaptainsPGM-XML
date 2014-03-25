@@ -235,6 +235,7 @@
     </apply>
     
     <portals>
+    <!--GReen POrtals!-->
       <portal z="33" filter="only-green"> <!--Goes from green spawn to main island-->
         <point>181,10,1001</point>
       </portal>
@@ -260,17 +261,55 @@
       <portal y="-10" filter="only-green"><!--To first floor from right arch-->
         <point>161,20,1062</point>
       </portal>
-      <portal x="@225" y="@20" z="@1079" filter="only-green"><!--from first floor to second floor near orange wool room-->
+      <portal x="@225" y="@20" z="@1079" yaw="45" filter="only-green"><!--from first floor to second floor near orange wool room-->
         <point>225,10,1074</point>
       </portal>
-      <portal x="@225" y="@10" z="@1074" filter="only-green"><!--from second floor to first floor near orange wool room-->
+      <portal x="@225" y="@10" z="@1074" yaw="90" filter="only-green"><!--from second floor to first floor near orange wool room-->
         <point>225,20,1079</point>
       </portal>
-      <portal x="@137" y="@20" z="@1079" filter="only-green"><!--from first floor to second floor near pink wool room-->
+      <portal x="@137" y="@20" z="@1079" yaw="-45" filter="only-green"><!--from first floor to second floor near purple wool room-->
         <point>137,10,1074</point>
       </portal>
-      <portal x="@137" y="@20" z="@1074" filter="only-green"><!--from first second to first floor near pink wool room-->
+      <portal x="@137" y="@10" z="@1074" yaw="-90" filter="only-green"><!--from first second to first floor near purple wool room-->
         <point>137,20,1079</point>
+      </portal>
+      
+      <!--Purple Portals!-->
+      <portal z="-33" filter="only-purple"><!--Goes from purple spawn to main island-->
+        <point>181,10,1263</point>
+      </portal>
+      <portal x="@181" y="@9.5" z="@1264" filter="only-purple"><!--Back to green spawn-->
+        <cuboid min="180,10,1230" max="182,11,1230"/>
+      </portal>
+      <portal x="@202" y="@19.5" z="@1202" filter="only-purple"><!--To right second floor from right arch-->
+        <point>192,10,1280</point>
+      </portal>
+       <portal x="@202" y="@19.5" z="@1202" filter="only-purple"><!--To right second floor from right arch-->
+        <point>190,10,1196</point>
+      </portal>
+      <portal x="@160" y="@19.5" z="@1202" filter="only-purple"><!--To left second floor from left arch-->
+        <point>172,10,1208</point>
+      </portal>
+      <portal x="@160" y="@19.5" z="@1202" filter="only-purple"><!--To left second floor from left arch-->
+        <point>172,10,1196</point>
+      </portal>
+      <portal y="-10" filter="only-purple"><!--To first floor from left arch-->
+        <point>161,20,1202</point>
+      </portal>
+      <portal y="-10" filter="only-purple"><!--To first floor from right arch-->
+        <point>201,20,1202</point>
+      </portal>
+       <portal x="@225" y="@20" z="@1185" yaw="130" filter="only-purple"><!--from first floor to second floor near pink wool room-->
+        <point>225,10,1190</point>
+      </portal>
+      <portal x="@224" y="@9.5" z="@1190" yaw="90" filter="only-purple"><!--from second floor to first floor near pink wool room-->
+        <point>225,20,1185</point>
+      </portal>
+       <portal x="@137" y="@20" z="@1185" yaw="-130" filter="only-purple"><!--from first floor to second floor near lime wool room-->
+        <point>137,10,1190</point>
+      </portal>
+      <portal x="@137" y="@10" z="@1190" yaw="-90" filter="only-green"><!--from first second to first floor near lime wool room-->
+        <point>137,20,1185</point>
       </portal>
     </portals>
     
