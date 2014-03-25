@@ -63,6 +63,8 @@
     </stage>
   </tutorial>
   
+  <maxbuildheight>57</maxbuildheight>
+  
   <wools team="green">
     <wool color="orange">
       <block>182,11,1281</block>
