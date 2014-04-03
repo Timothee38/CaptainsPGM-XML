@@ -99,10 +99,13 @@
   </teams>
   
   <kits>
-    <kit name="green">
+  <kit name="spawn">
+    <item slot="9">arrow</item>
+  </kit>
+    <kit name="green" parents="spawn">
       <helmet color="667f33">298</helmet>
     </kit>
-    <kit name="purple">
+    <kit name="purple" parents="spawn">
       <helmet color="7f3fb2">298</helmet>
     </kit>
   </kits>
