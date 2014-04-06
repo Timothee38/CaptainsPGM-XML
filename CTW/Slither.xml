@@ -184,6 +184,11 @@
         <union name="red-spawn"/>
         <union name="blue-spawn"/>
     </apply>
+    <apply block="deny-blocks" message="You may not build outside the void!">
+        <negative>
+            <cuboid min="115,18,-53" max="59,65,141"/>
+        </negative>
+    </apply>
 </regions>
 <itemremove>
     <item>298</item>
