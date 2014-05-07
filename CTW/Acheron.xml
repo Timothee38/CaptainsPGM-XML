@@ -1,326 +1,304 @@
 <?xml version="1.0"?>
-<map proto="1.3.1">
-  <name>Acheron</name>
-  <verion>1.0.2</version>
-  <objective>Retrive the two wools from the enemy side and leak the entre core!</objective>
-  
-  <authors>
-    <author contributation="Main Map Building and XML">Captain_Elliott</author>
-    <author contributation="Main Map builder and Aesthetics">titandigger</author>
-    <author contributation="Map Builder and Feedback">Ozillion</author>
-  </authors>
-  
-  <contributors>
-    <contributor contributation="Feedback">Lexar500</contributor>
-    <contributor contributation="Feedback and Minior Building">pwnedrs</contributor>
-    <contributor contributation="Feedback">RedstoneOpenDoor</contributor>
-    <contributor contributation="Building spawn">cookey29</contributor>
-    <contributor contributation="Feedback">Farmertom66</contributor>
-  </contributors>
-  
-  <include src="tutorial.xml"/>
-  <tutorial>
+<map proto="1.3.2">
+<name>Acheron</name>
+<version>1.0.3</version>
+<objective>Retrive the two wools from the enemy side and leak the entre core!</objective>
+<authors>
+    <author contribution="Main Map Building and XML">Captain_Elliott</author>
+    <author contribution="Main Map builder and Aesthetics">titandigger</author>
+    <author contribution="Map Builder and Feedback">Ozillion</author>
+</authors>
+<contributors>
+    <contributor contribution="Feedback">Lexar500</contributor>
+    <contributor contribution="Feedback and Minior Building">pwnedrs</contributor>
+    <contributor contribution="Feedback">RedstoneOpenDoor</contributor>
+    <contributor contribution="Building spawn">cookey29</contributor>
+    <contributor contribution="Feedback">Farmertom66</contributor>
+</contributors>
+<include src="tutorial.xml"/>
+<tutorial>
     <stage title="CTW">
-      <line>`rThis is a `aCapture the Wool `r` c(CTW) `rmap</line>
-      <line>`rCapture both wools from the enemy side and bring them back</line>
+        <line>`rThis is a `aCapture the Wool `r` c(CTW) `rmap.</line>
+        <line>`rCapture both wools from the enemy side and bring them back.</line>
     </stage>
     <stage title="DTC">
-      <line>`rThis map is also a `7Destroy the Core `r `9(DTC)</line>
-      <line>`rLeak the enemy core</line>
+        <line>`rThis map is also a `7Destroy the Core `r `9(DTC) `rmap.</line>
+        <line>`rLeak the enemy's core to win!</line>
     </stage>
     <stage title="Wool Room">
-      <teleport>
-        <point yaw="-90">236,22,1086</point>
-      </teleport>
-      <line>This is a wool room</line>
-      <line>You must come here in order to retrive the wool</line>
+        <teleport>
+            <point yaw="-90">236,22,1086</point>
+        </teleport>
+        <line>This is a wool room.</line>
+        <line>You must come here in order to retrive the wool.</line>
     </stage>
     <stage title="Wool Room Loot">
-      <teleport>
-        <point yaw="-50">155,10,1087</point>
-      </teleport>
-      <line>To gain the loot break the gold and diamond blocks</line>
+        <teleport>
+            <point yaw="-50">155,10,1087</point>
+        </teleport>
+        <line>To gain the loot break the gold and diamond blocks.</line>
     </stage>
     <stage title="Victory Monument">
-      <teleport>
-        <point yaw="177">181,10,985</point>
-      </teleport>
-      <line>Place the wools you retrive here</line>
+        <teleport>
+            <point yaw="177">181,10,985</point>
+        </teleport>
+        <line>Place the wools you retrive here.</line>
     </stage>
     <stage title="core">
-      <teleport>
-        <point yaw="0">181,16,1097</point>
-      </teleport>
-      <line>Break a block of the core to leak lava</line>
-      <line>Lava needs to leak 4 blocks in order for it to be completed</line>
+        <teleport>
+            <point yaw="0">181,16,1097</point>
+        </teleport>
+        <line>Break a block of the core to leak lava.</line>
+        <line>Lava needs to leak 4 blocks in order for it to be completed.</line>
     </stage>
     <stage title="iron">
-      <teleport>
-        <point yaw="90">168,14,987</point>
-      </teleport>
-      <line>Use this iron to make armour and tools</line>
-      <line>The middle two blocks of iron will regenerate to avoid no iron in the event of a long game</line>
+        <teleport>
+            <point yaw="90">168,14,987</point>
+        </teleport>
+        <line>Use this iron to make armour and tools.</line>
+        <line>The middle two blocks of iron will regenerate to avoid no iron in the event of a long game.</line>
     </stage>
-  </tutorial>
-  
-  <maxbuildheight>57</maxbuildheight>
-  
-  <wools team="green">
+</tutorial>
+<maxbuildheight>57</maxbuildheight>
+<wools team="green">
     <wool color="orange">
-      <block>182,11,1281</block>
+        <block>182,11,1281</block>
     </wool>
     <wool color="purple">
-      <block>180,11,1281</block>
+        <block>180,11,1281</block>
     </wool>
-  </wools>
-  <wools team="purple">
+</wools>
+<wools team="purple">
     <wool color="lime">
-      <block>180,11,983</block>
+        <block>180,11,983</block>
     </wool>
     <wool color="pink">
-      <block>182,11,983</block>
+        <block>182,11,983</block>
     </wool>
-  </wools>
-  
-  <cores material="obsidian" leak="4" mode-changes="true">
-    <core team="green"><cuboid min="183,15,1104" max="178,21,1109"/></core>
-    <core team="purple"><cuboid min="178,15,1161" max="184,21,1155"/></core>
-  </cores>
-  
-  <modes>
-    <mode after="15m" material="redstone block" name="`4Redstone Mode!"/>
-    <mode after="25m" material="gold block" name="`6Gold mode!"/>
-    <mode after="45m" material="glass" name="Glass Mode!"/>
-  </modes>
-  
-  <teams>
+</wools>
+<cores material="obsidian" leak="4" mode-changes="true">
+    <core team="green">
+        <cuboid min="183,15,1104" max="178,21,1109"/>
+    </core>
+    <core team="purple">
+        <cuboid min="178,15,1161" max="184,21,1155"/>
+    </core>
+</cores>
+<modes>
+    <mode after="15m" material="redstone block" name="`4Redstone Core Mode!"/>
+    <mode after="25m" material="gold block" name="`6Gold Core Mode!"/>
+    <mode after="45m" material="glass" name="Glass Core Mode!"/>
+</modes>
+<teams>
     <team color="green" max="64" max-overfill="100">Green Team</team>
     <team color="purple" max="64" max-overfill="100">Purple Team</team>
-  </teams>
-  
-  <kits>
-  <kit name="spawn">
-    <item slot="9">arrow</item>
-  </kit>
+</teams>
+<kits>
+    <kit name="spawn">
+        <item slot="9">arrow</item>
+    </kit>
     <kit name="green" parents="spawn">
-      <helmet color="667f33">298</helmet>
+        <helmet color="667f33">leather helmet</helmet>
     </kit>
     <kit name="purple" parents="spawn">
-      <helmet color="7f3fb2">298</helmet>
+        <helmet color="7f3fb2">leather helmet</helmet>
     </kit>
-  </kits>
-  
-  <spawns>
-    <spawn team="green">
-      <cuboid min="179,10,990" max="183,10,994"/>
+</kits>
+<spawns>
+    <spawn team="green" kit="green">
+        <cuboid min="179,10,990" max="183,10,994"/>
     </spawn>
-    <spawn team="pruple">
-      <cuboid min="179,10,1270" max="183,10,994"/>
+    <spawn team="purple" kit="purple">
+        <cuboid min="179,10,1270" max="183,10,994"/>
     </spawn>
     <default>
-      <circle centre="291,61,1132" radius="3"/>
+        <circle center="291,61,1132" radius="3"/>
     </default>
-  </spawns>
-  
-  <renewables>
-    <renewable rate="0.5" grow="true" particles="false" sound="fasle" avoid-entities="true">
-      <region>
-        <union name="renewable iron">
-          <cuboid min="202,10,986" max="210,12,988"/>
-          <cuboid min="152,10,986" max="159,12,988"/>
-          <cuboid min="210,10,1278" max="202,12,1276"/>
-          <cuboid min="152,10,1276" max="160,12,1278"/>
-        </union>
-      </region>
-      <renew>iron block</renew>
-      <replace>air</replace>
+</spawns>
+<renewables>
+    <renewable rate="0.5" grow="true" particles="false" sound="false" avoid-entities="true">
+        <region>
+            <union name="renewable iron">
+                <cuboid min="202,10,986" max="210,12,988"/>
+                <cuboid min="152,10,986" max="159,12,988"/>
+                <cuboid min="210,10,1278" max="202,12,1276"/>
+                <cuboid min="152,10,1276" max="160,12,1278"/>
+            </union>
+        </region>
+        <renew>iron block</renew>
+        <replace>air</replace>
     </renewable>
-  </renewables>
-  
-  <blockdrops>
+</renewables>
+<blockdrops>
     <rule>
-      <region>
-        <union name="purple-wool-rooms"/>
-        <union name="green-wool-rooms"/>
-      </region>
-      <filter>
-        <block>diamond block</block>
-      </filter>
-      <drops>
-        <item>311</item>
-        <item damage="8194" potions="speed:1200:1:fasle"></item>
-        <item amount="64">322</item>
-      </drops>
-      <replacment>diamond block</replacment>
-      <wrongtool>false</wrongtool>
+        <region>
+            <union name="purple-wool-rooms"/>
+            <union name="green-wool-rooms"/>
+        </region>
+        <filter>
+            <block>diamond block</block>
+        </filter>
+        <drops>
+            <item>diamond chestplate</item>
+            <item damage="8194" potion="speed:1200:1:false">potion</item>
+            <item amount="64">golden apple</item>
+        </drops>
+        <replacement>diamond block</replacement>
+        <wrongtool>false</wrongtool>
     </rule>
-     <rule>
-      <region>
-        <union name="purple-wool-rooms"/>
-        <union name="green-wool-rooms"/>
-      </region>
-      <filter>
-        <block>gold block</block>
-      </filter>
-      <drops>
-        <item enchantment="arrow damage;arrow knockback">bow</item>
-        <item amount="128">arrow</item>
-      </drops>
-      <replacment>gold block</replacment>
-      <wrongtool>false</wrongtool>
+    <rule>
+        <region>
+            <union name="purple-wool-rooms"/>
+            <union name="green-wool-rooms"/>
+        </region>
+        <filter>
+            <block>gold block</block>
+        </filter>
+        <drops>
+            <item enchantment="arrow damage;arrow knockback">bow</item>
+            <item amount="128">arrow</item>
+        </drops>
+        <replacement>gold block</replacement>
+        <wrongtool>false</wrongtool>
     </rule>
-  </blockdrops>
-  
-  <filters>
+</blockdrops>
+<filters>
     <filter name="only-green" parents="deny-players">
-      <allow><team>green</team></allow>
+        <allow>
+            <team>green</team>
+        </allow>
     </filter>
-    
     <filter name="only-purple" parents="deny-players">
-      <allow><team>purple</team></allow>
+        <allow>
+            <team>purple</team>
+        </allow>
     </filter>
-    
-    <filter name="only-iron" parnets="deny-blocks">
-      <allow><block>iron block</block></allow>
+    <filter name="only-iron" parents="deny-blocks">
+        <allow>
+            <block>iron block</block>
+        </allow>
     </filter>
-    
     <filter name="wool-room-break" parents="deny-blocks">
-    <allow>
-    <block>gold block</block>
-    <block>diamond block</block>
-    </allow>
-    <filter>
-
-    <filter name="no-void" parents="allow-all">
-        <deny><void/></deny>
+        <allow>
+            <block>gold block</block>
+            <block>diamond block</block>
+        </allow>
     </filter>
-  </filters>
-  
-  <regions>
+    <filter name="no-void" parents="allow-all">
+        <deny>
+            <void/>
+        </deny>
+    </filter>
+</filters>
+<regions>
     <union name="purple-wool-rooms">
-      <cuboid name="pink" min="243,10,1172" max="254,20,1183"/>
-      <cuboid name="lime" min="106,10,1171" max="119,20,1184"/>
-    <union>
-    <union name="green-wool-rooms">
-      <cuboid name="orange" min="256,10,1093" max="243,20,1080"/>
-      <cuboid name="purple" min="119,10,1092" max="107,20,1080"/>
+        <cuboid name="pink" min="243,10,1172" max="254,20,1183"/>
+        <cuboid name="lime" min="106,10,1171" max="119,20,1184"/>
     </union>
-    
-    <apply block="only-iron" messgae="You may only break iron in the spawns">
-      <rectangle name="green-spawn" min="143,980" max="219,1,1007"/>
-      <rectangle name="purple-spawn" min="219,1284" max="143,1257"/>
+    <union name="green-wool-rooms">
+        <cuboid name="orange" min="256,10,1093" max="243,20,1080"/>
+        <cuboid name="purple" min="119,10,1092" max="107,20,1080"/>
+    </union>
+    <apply block="only-iron" message="You may only break iron in the spawns">
+        <rectangle name="green-spawn" min="143,980" max="219,1007"/>
+        <rectangle name="purple-spawn" min="219,1284" max="143,1257"/>
     </apply>
-    
     <apply enter="only-green" message="You may not enter your own teams wool room">
-      <union name="green-wool-rooms"> <!--Green Team neeeds to get to these rooms-->
-      <cylinder name="lime-wool-room" centre="113,10,1178" radius="8" height="20"/>
-      <cylinder name="pink-wool-room" centre="249,10,1178" radius="8" height="20"/>
-      </union>
+        <union name="green-wool-rooms">
+            <cylinder name="lime-wool-room" center="113,10,1178" radius="8" height="20"/>
+            <cylinder name="pink-wool-room" center="249,10,1178" radius="8" height="20"/>
+        </union>
     </apply>
-    
     <apply enter="only-purple" message="You may not enter your own teams wool room">
-      <union mame="purple-wool-rooms">
-        <cylinder name="orange-wool-room" centre="249,10,1086" radius="8" height="20"/>
-        <cylinder name="purple-wool-room" centre="113,10,1086" radius="8" height="20"/>
-      </union>
+        <cylinder name="orange-wool-room" center="249,10,1086" radius="8" height="20"/>
+        <cylinder name="purple-wool-room" center="113,10,1086" radius="8" height="20"/>
+
     </apply>
-    
     <apply block="wool-room-break" message="you may only break gold and diamond blocks in the wool room to gain loot!">
-      <union mame="wool-rooms">
-        <cylinder name="orange-wool-room" centre="249,10,1086" radius="8" height="20"/>
-        <cylinder name="purple-wool-room" centre="113,10,1086" radius="8" height="20"/>
-        <cylinder name="lime-wool-room" centre="113,10,1178" radius="8" height="20"/>
-        <cylinder name="pink-wool-room" centre="249,10,1178" radius="8" height="20"/>
-      </union>
+        <cylinder name="orange-wool-room" center="249,10,1086" radius="8" height="20"/>
+        <cylinder name="purple-wool-room" center="113,10,1086" radius="8" height="20"/>
+        <cylinder name="lime-wool-room" center="113,10,1178" radius="8" height="20"/>
+        <cylinder name="pink-wool-room" center="249,10,1178" radius="8" height="20"/>
     </apply>
-    
     <apply block="no-void" messgae="you may not edit the void!">
-    <negative>
-      <rectangle min="-oo,oo" max="oo,-oo"/>
-    </negative>
+        <negative>
+            <rectangle min="-oo,oo" max="oo,-oo"/>
+        </negative>
     </apply>
-    
-    <portals>
-    <!--GReen POrtals!-->
-      <portal z="33" filter="only-green"> <!--Goes from green spawn to main island-->
+</regions>
+<portals>
+    <portal z="33" filter="only-green">
         <block>181,10,1001</block>
-      </portal>
-      <portal x="@181" y="@9.5" z="@1000" filter="only-green"><!--Back to green spawn-->
+    </portal>
+    <portal x="@181" y="@9.5" z="@1000" filter="only-green">
         <cuboid min="180,10,1034" max="182,11,1034"/>
-      </portal>
-      <portal x="@160" y="@19.5" z="@1062" filter="only-green"><!--To right second floor from right arch-->
+    </portal>
+    <portal x="@160" y="@19.5" z="@1062" filter="only-green">
         <block>172,10,1068</block>
-      </portal>
-      <portal x="@160" y="@19.5" z="@1062" filter="only-green"><!--To right second floor from right arch-->
+    </portal>
+    <portal x="@160" y="@19.5" z="@1062" filter="only-green">
         <block>172,10,1056</block>
-      </portal>
-      <portal x="@202" y="@19.5" z="@1062" filter="only-green"><!--To left second floor from left arch-->
+    </portal>
+    <portal x="@202" y="@19.5" z="@1062" filter="only-green">
         <block>190,10,1056</block>
-      </portal>
-      <portal x="@202" y="@19.5" z="@1062" filter="only-green"><!--To left second floor from left arch-->
+    </portal>
+    <portal x="@202" y="@19.5" z="@1062" filter="only-green">
         <block>190,10,1068</block>
-      </portal>
-      </portal>
-      <portal y="-10" filter="only-green"><!--To first floor from left arch-->
+    </portal>
+    <portal y="-10" filter="only-green">
         <block>201,20,1062</block>
-      </portal>
-      <portal y="-10" filter="only-green"><!--To first floor from right arch-->
+    </portal>
+    <portal y="-10" filter="only-green">
         <block>161,20,1062</block>
-      </portal>
-      <portal x="@225" y="@20" z="@1079" yaw="45" filter="only-green"><!--from first floor to second floor near orange wool room-->
+    </portal>
+    <portal x="@225" y="@20" z="@1079" yaw="45" filter="only-green">
         <block>225,10,1074</block>
-      </portal>
-      <portal x="@225" y="@10" z="@1074" yaw="90" filter="only-green"><!--from second floor to first floor near orange wool room-->
+    </portal>
+    <portal x="@225" y="@10" z="@1074" yaw="90" filter="only-green">
         <block>225,20,1079</block>
-      </portal>
-      <portal x="@137" y="@20" z="@1079" yaw="-45" filter="only-green"><!--from first floor to second floor near purple wool room-->
+    </portal>
+    <portal x="@137" y="@20" z="@1079" yaw="-45" filter="only-green">
         <block>137,10,1074</block>
-      </portal>
-      <portal x="@137" y="@10" z="@1074" yaw="-90" filter="only-green"><!--from first second to first floor near purple wool room-->
+    </portal>
+    <portal x="@137" y="@10" z="@1074" yaw="-90" filter="only-green">
         <block>137,20,1079</block>
-      </portal>
-      
-      <!--Purple Portals!-->
-      <portal z="-33" filter="only-purple"><!--Goes from purple spawn to main island-->
+    </portal>
+    <portal z="-33" filter="only-purple">
         <block>181,10,1263</block>
-      </portal>
-      <portal x="@181" y="@9.5" z="@1264" filter="only-purple"><!--Back to green spawn-->
+    </portal>
+    <portal x="@181" y="@9.5" z="@1264" filter="only-purple">
         <cuboid min="180,10,1230" max="182,11,1230"/>
-      </portal>
-      <portal x="@202" y="@19.5" z="@1202" filter="only-purple"><!--To right second floor from right arch-->
+    </portal>
+    <portal x="@202" y="@19.5" z="@1202" filter="only-purple">
         <block>192,10,1280</block>
-      </portal>
-       <portal x="@202" y="@19.5" z="@1202" filter="only-purple"><!--To right second floor from right arch-->
+    </portal>
+    <portal x="@202" y="@19.5" z="@1202" filter="only-purple">
         <block>190,10,1196</block>
-      </portal>
-      <portal x="@160" y="@19.5" z="@1202" filter="only-purple"><!--To left second floor from left arch-->
+    </portal>
+    <portal x="@160" y="@19.5" z="@1202" filter="only-purple">
         <block>172,10,1208</block>
-      </portal>
-      <portal x="@160" y="@19.5" z="@1202" filter="only-purple"><!--To left second floor from left arch-->
+    </portal>
+    <portal x="@160" y="@19.5" z="@1202" filter="only-purple">
         <block>172,10,1196</block>
-      </portal>
-      <portal y="-10" filter="only-purple"><!--To first floor from left arch-->
+    </portal>
+    <portal y="-10" filter="only-purple">
         <block>161,20,1202</block>
-      </portal>
-      <portal y="-10" filter="only-purple"><!--To first floor from right arch-->
+    </portal>
+    <portal y="-10" filter="only-purple">
         <block>201,20,1202</block>
-      </portal>
-       <portal x="@225" y="@20" z="@1185" yaw="130" filter="only-purple"><!--from first floor to second floor near pink wool room-->
+    </portal>
+    <portal x="@225" y="@20" z="@1185" yaw="130" filter="only-purple">
         <block>225,10,1190</block>
-      </portal>
-      <portal x="@224" y="@9.5" z="@1190" yaw="90" filter="only-purple"><!--from second floor to first floor near pink wool room-->
+    </portal>
+    <portal x="@224" y="@9.5" z="@1190" yaw="90" filter="only-purple">
         <block>225,20,1185</block>
-      </portal>
-       <portal x="@137" y="@20" z="@1185" yaw="-130" filter="only-purple"><!--from first floor to second floor near lime wool room-->
+    </portal>
+    <portal x="@137" y="@20" z="@1185" yaw="-130" filter="only-purple">
         <block>137,10,1190</block>
-      </portal>
-      <portal x="@137" y="@10" z="@1190" yaw="-90" filter="only-green"><!--from first second to first floor near lime wool room-->
+    </portal>
+    <portal x="@137" y="@10" z="@1190" yaw="-90" filter="only-green">
         <block>137,20,1185</block>
-      </portal>
-    </portals>
-    
-  </regions>
-      
-  <timelock>on</timelock>
-      
+    </portal>
+</portals>
+<timelock>on</timelock>
 </map>
