@@ -72,5 +72,13 @@
     <item amount="32">arrow</item>
     <item>emerald</item>
   </killreward>
+  
+  <itemkeep>
+    <item>bow</item>
+    <item>arrow</item>
+    <item>emerald</item>
+    <item>396</item>
+    <item>301</item> <!--Leather boots-->
+  </itemkeep>
 
 </map>
