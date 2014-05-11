@@ -3,7 +3,7 @@
 <name>Storm The Castle: War Zone</name>
 <version>1.0.0</version>
 <objective>
-	Attackers: Get to the enemy side and leak the cores! Defenders: Stop the attackers from leaking your core
+	Attackers must leak the enemy's two cores whilst defenders must defend them for 35 minutes
 </objective>
 <authors>
 	<author contributation="Map design, idea">DoomRobotBoy</author>
