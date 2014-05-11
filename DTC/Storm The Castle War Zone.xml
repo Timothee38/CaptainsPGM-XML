@@ -43,7 +43,7 @@
 		</core>
 	</cores>
 
-	<time result="defenders"></time> <!--IMPORTANT:: NEED TIME HERE-->
+	<time result="defenders">35m</time>
 
 	<kits>
 		<kit name="spawn">
