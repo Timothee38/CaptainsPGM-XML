@@ -46,7 +46,7 @@
 		<rectangle min="1267,92" max="1288,101"/>
 	</spawn>
 	<default>
-		<circle centre="1154,-111" radius="3"/>
+		<circle center="1154,-111" radius="3"/>
 	</default>
 </spawns>
 <filters>
