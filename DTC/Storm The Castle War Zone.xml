@@ -13,8 +13,8 @@
 	<contributor contribution="XML">Captain_Smelliott</contributor>
 </contributors>
 <teams>
-	<team color="red" max="70" max-overfill="100">Defenders</team>
-	<team color="blue" max="70" max-overfill="100">Attackers</team>
+	<team color="red" max="70">Defenders</team>
+	<team color="blue" max="70">Attackers</team>
 </teams>
 <kits>
 	<kit name="spawn">
@@ -46,7 +46,7 @@
 		<rectangle min="1267,92" max="1288,101"/>
 	</spawn>
 	<default>
-		<circle center="1154,-111" radius="3"/>
+		<circle centre="1154,-111" radius="3"/>
 	</default>
 </spawns>
 <filters>
@@ -86,7 +86,7 @@
 		<message>
 			<line>This map is an `4Attack`r/`2Defend `rmap.</line>
 			<line>This means that the `4Attacking `rteam must leak both cores before time runs out</line>
-			<line>The `2Defending `rteam must prevent them from leaking both core untill the time runs out</line>
+			<line>The `2Defending `rteam must prevent them from leaking both cores untill the time runs out</line>
 		</message>
 	</stage>
 	<stage title="Cores">
