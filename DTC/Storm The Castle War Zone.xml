@@ -13,12 +13,12 @@
 			</message>
 		</stage>
 		<stage title="Cores">
-			<teleport>
-				<point yaw="90">992,38,45</point>
-			</teleport>
 			<message>
 				<line>The `4Attacking `rteam must leak both of thes cores `l4 `rblocks down in order to win</line>
 			<message>
+			<teleport>
+				<point yaw="90">992,38,45</point>
+			</teleport>
 		</stage>
 	</tutorial>
 
@@ -105,6 +105,7 @@
 			</negative>
 		</apply>
 	</regions>
+</map>
  
 
 
