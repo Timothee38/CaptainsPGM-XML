@@ -1,2 +1,12 @@
 <map proto="1.3.2">
+<name>Miralennor</name>
+<version>1.0.0</version>
+<objective>Destroy the obsidian monument located on the enemy side.</objective>
+<rules>
+  <rule>You cannot break enchatment tables</rule>
+</rules>
+
+<authors>
+  <author>Qixit</author>
+</authors>
 </map>
