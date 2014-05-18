@@ -9,4 +9,15 @@
 <authors>
   <author>Qixit</author>
 </authors>
+
+<include src="tutorial.xml"/>
+<tutorial>
+  
+</tutorial>
+
+<teams>
+  <team color="red" max="18">Red Team</team>
+  <team color="blue" max="18">Blue Team</team>
+</teams>
+
 </map>
