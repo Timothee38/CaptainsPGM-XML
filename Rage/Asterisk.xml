@@ -49,9 +49,7 @@
       </kit>
    </kits>
    <regions>
-      <union name="playarea">
-         <cylinder name="region1" base="-oo,-oo,-oo," radius="-oo" height="-oo" />
-      </union>
+      <cylinder name="playarea" base="-oo,-oo,-oo," radius="-oo" height="-oo" />
       <apply block="deny-all">
          <region name="playarea" />
       </apply>
