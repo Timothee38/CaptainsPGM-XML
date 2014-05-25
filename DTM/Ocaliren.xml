@@ -125,4 +125,7 @@
 	<tool>bow</tool>
 	<tool>stone sword</tool>
 </toolrepair>
+<killreward>
+	<item>sugar</item>
+</killreward>
 </map>
