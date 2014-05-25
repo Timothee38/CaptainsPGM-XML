@@ -55,7 +55,7 @@
 		<boots damage="-3000">chainmail boots</boots>
 	</kit>
 </kits>
-<spawns> damage="-3000"
+<spawns>
 	<spawn team="red" kit="red" yaw="0">
 		<cuboid min="458,116,495" max="460,118,497"/>
 	</spawn>	
