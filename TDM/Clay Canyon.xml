@@ -1,0 +1,128 @@
+<map proto="1.3.2">
+	<name>Clay Canyon</name>
+	<version>1.0.0</version>
+	<objective>Score as many points before time runs out</objective>
+
+	<authors>
+		<author>OctoOzone</author>
+		<author>cswhite2000</author>
+	</authors>
+
+	<contributors>
+		<contributor contributation="XML">Captain_Elliott</contributor>
+		<contributor>ravi60</contributor>
+	</contributors>
+
+	<include src="tutorial.xml"/>
+	<tutorial>
+		<stage title="Gamemode">
+			<message>
+				<line>This is a `cTeam Deathmatch `2[TDM] `rGamemode</line>
+				<line>Each enemy kill gains `11 `rPoint</line>
+			</message>
+		</stage>
+		<stage title="Scoreboxes">
+			<message>
+				<line>You can also score points by running into the enemy teams `3scorebox</line>
+				<line>`rEach scorebox will gain your team `63 `rpoints</line>
+			</message>
+			<teleport>
+				<point yaw="-180">478,127,416</point>
+			</teleport>
+		</stage>
+	</tutorial>
+
+	<teams>
+		<team color="blue" max="16" max-overfill="20">Blue Team</team>
+		<team color="red" max="16" max-ovefill="20">Red Team</team>
+	</teams>
+
+	<kits>
+		<kit name="spawn" force="true">
+			<item slot="0">iron sword</item>
+			<item slot="1">bow</item>
+			<item slot="2" amount="64">steak</item>
+			<item slot="8" amount="2">golden appel</item>
+			<item slot="28" amount="64">arrow</item>
+		</kit>
+		<kit name="red" parent="spawn">
+			<helmet color="993333">298</helmet>
+			<chestplate>iron chestplate</chestplate>
+			<leggings color="993333">300</leggings>
+			<boots>305</boots>
+		</kit>
+		<kit name="blue" parent="spawn">
+			<helmet color="334CB2">298</helmet>
+			<chestplate>iron chestplate</chestplate>
+			<leggings color="334CB2">300</leggings>
+			<boots>305</boots>
+		</kit>
+	</kits>
+
+	<spawns>
+		<spawn team="red" kit="red" yaw="0">
+			<region name="red-spawn"/>
+		</spawn>	
+		<spawn team="blue" kit="blue" yaw="-180">
+			<region name="blue-spawn"/>
+		</spawn>
+		<default yaw="90">
+			<circle center="508,171,462" radius="2"/>
+		</default>
+	</spawns>
+
+	<score>
+    	<box value="3" team="red" filter="only-red">
+        	<rectangle min="447,406" max="479,408"/>
+    	</box>
+    	<box value="3" team="blue" filter="only-blue">
+    		<rectangle min="477,515" max="479,517"/>
+    	</box>
+	</score>
+
+	<score>
+		<time>600</time>
+		<limit>-1</limit>
+	</score>
+
+	<filters>
+		<filter name="only-red">
+			<team>red</team>
+		</filter>
+
+		<filter name="only-blue">
+			<team>blue</team>
+		</filter>
+	</filters>
+
+	<regions>
+		<cuboid name="blue-spawn" min="460,116,428" max="458,118,426"/>
+		<cuboid name="red-spawn" min="458,116,495" max="460,118,497"/>
+
+		<apply block="deny-blocks">
+			<cuboid min="oo,oo,oo" max="-oo,-oo,-oo"/>
+		</apply>
+		<apply enter="only-red">
+			<region name="red-spawn"/>
+		</apply>
+		<apply enter="only-blue">
+			<region name="blue-spawn"/>
+		</apply>
+	</regions>
+
+	<killreward>
+		<item>golden apple</item>
+	</killreward>
+
+	<itemremove>
+		<item>298</item>
+		<item>iron chestplate</item>
+		<item>300</item>
+		<item>305</item>
+		<item>steak</item>
+	</itemremove>
+	<toolrepair>
+		<tool>iron sword</item>
+		<tool>bow<tool>
+	</toolrepair>
+</map>
