@@ -73,8 +73,6 @@
 	<box value="3" team="blue" filter="only-blue">
 		<rectangle name="blue-spawn" min="477,515" max="479,517"/>
 	</box>
-</score>
-<score>
 	<time>600</time>
 	<limit>-1</limit>
 </score>
@@ -82,12 +80,12 @@
 	<filter name="only-red">
 		<team>red</team>
 	</filter>
-		<filter name="only-blue">
+	<filter name="only-blue">
 		<team>blue</team>
 	</filter>
 </filters>
 <regions>
-		<apply block="deny-blocks">
+	<apply block="deny-blocks">
 		<rectangle min="-oo,-oo" max="oo,oo"/>
 	</apply>
 	<apply enter="only-red">
