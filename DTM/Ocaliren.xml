@@ -1,22 +1,18 @@
+<?xml version="1.0"?>
 <map proto="1.3.2">
-
 <name>Ocaliren</name>
 <version>1.0.0</version>
 <objective>Destroy the enemy's monument</objective>
-
 <authors>
 	<author>Qixit</author>
 </authors>
-
 <contributors>
 	<contributor contributation="XML">Captain_Elliott</contributor>
 </contributors>
-
 <teams>
 	<team color="aqua" max="30" max-overfill="35">Blue Team</team>
 	<team color="red" max="30" max-ovefill="35">Red team</team>
 </teams>
-
 <kits>
 	<kit name="spawn" force="true">
 		<item slot="0">stone sword</item>
@@ -50,10 +46,9 @@
 		<point yaw="90">-161,77,595</point>
 	</default>
 </spawns>
-
 <destroyables name="Monument" materials="obsidian" completion="100%">
 	<destroyables owner="aqua">
-		<destroyable name="Vally Monument">
+		<destroyable name="Valley Monument">
 			<cuboid min="-183,28,624" max="-183,29,624"/>
 		</destroyable>
 		<destroyable name="Left-Hillside Monument">
@@ -64,7 +59,7 @@
 		</destroyable>
 	</destroyables>
 	<destroyables owner="red">
-		<destroyable name="Vally Monument">
+		<destroyable name="Valley Monument">
 			<cuboid min="-183,28,565" max="-183,29,565"/>
 		</destroyable>
 		<destroyable name="Left-Hillside Monument">
@@ -75,7 +70,6 @@
 		</destroyable>
 	</destroyables>
 </destroyables>
-
 <filters>
 	<filter name="only-aqua">
 		<team>aqua</team>
@@ -89,18 +83,15 @@
 		</not>
 	</filter>
 </filters>
-
 <regions>
 	<cuboid name="aqua-spawn" min="-186,34,661" max="-186,36,661"/>
 	<cuboid name="red-spawn" min="-186,34,538" max="-186,36,661"/>
-
 	<apply enter="only-red" block="deny-blocks">
 		<region name="red-spawn"/>
 	</apply>
 	<apply enter="only-aqua" block="deny-blocks">
 		<region name="aqua-spawn"/>
 	</apply>
-
 	<apply block="deny-blocks" message="DONT TRY TO RELEASE THE VILLAGER!">
 		<cuboid min="-193,29,558" max="-196,33,560"/>
 	</apply>
@@ -116,10 +107,9 @@
 		<cuboid min="oo,oo,oo" max="-oo,-oo,-oo"/>
 	</apply>
 </regions>
-
 <itemremove>
 	<item>bread</item>
-	<item>4</item>
+	<item>cobblestone</item>
 </itemremove>
 <toolrepair>
 	<tool>bow</tool>
