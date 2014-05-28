@@ -78,10 +78,10 @@
 </wools>
 <cores material="obsidian" leak="4" mode-changes="true">
     <core team="green">
-        <cuboid min="183,15,1104" max="178,21,1109"/>
+        <cuboid min="178,16,1110" max="184,22,1103"/>
     </core>
     <core team="purple">
-        <cuboid min="178,15,1161" max="184,21,1155"/>
+        <cuboid min="178,16,1161" max="184,22,1155"/>
     </core>
 </cores>
 <modes>
@@ -105,10 +105,10 @@
     </kit>
 </kits>
 <spawns>
-    <spawn team="green" kit="green">
+    <spawn team="green" kit="green" safe="true">
         <cuboid min="179,10,990" max="183,10,994"/>
     </spawn>
-    <spawn team="purple" kit="purple">
+    <spawn team="purple" kit="purple" safe="true">
         <cuboid min="179,10,1270" max="183,10,994"/>
     </spawn>
     <default>
@@ -118,11 +118,15 @@
 <renewables>
     <renewable rate="0.5" grow="true" particles="false" sound="false" avoid-entities="true">
         <region>
-            <union name="renewable iron">
-                <cuboid min="202,10,986" max="210,12,988"/>
-                <cuboid min="152,10,986" max="159,12,988"/>
-                <cuboid min="210,10,1278" max="202,12,1276"/>
-                <cuboid min="152,10,1276" max="160,12,1278"/>
+            <union name="renewable-iron">
+                <cuboid min="204,10,1278" max="201,13,1276"/><!--Purple, Right (1)-->
+                <cuboid min="210,10,1278" max="208,13,1275"/><!--Purple, Right (2)-->
+                <cuboid min="158,10,1276" max="160,13,1278"/><!--Purple, Left (1)-->
+                <cuboid min="152,10,1276" max="154,13,1278"/><!--Purple, Left (2)-->
+                <cuboid min="158,10,986" max="160,13,988"/><!--Green, Right (1)-->
+                <cuboid min="155,10,988" max="152,10,986"/><!--Green, Right (2)-->
+                <cuboid min="204,10,988" max="202,13,986"/><!--Green, Left (1)-->
+                <cuboid min="210,10,988" max="208,13,986"/><!--Green, Left (2)-->
             </union>
         </region>
         <renew>iron block</renew>
@@ -192,12 +196,12 @@
 </filters>
 <regions>
     <union name="purple-wool-rooms">
-        <cuboid name="pink" min="243,10,1172" max="254,20,1183"/>
-        <cuboid name="lime" min="106,10,1171" max="119,20,1184"/>
+        <cuboid name="pink" min="256,10,1184" max="244,20,1173"/>
+        <cuboid name="lime" min="107,10,1172" max="119,20,1183"/>
     </union>
     <union name="green-wool-rooms">
-        <cuboid name="orange" min="256,10,1093" max="243,20,1080"/>
-        <cuboid name="purple" min="119,10,1092" max="107,20,1080"/>
+        <cuboid name="orange" min="256,10,1093" max="244,20,1081"/>
+        <cuboid name="purple" min="107,10,1080" max="119,20,1091"/>
     </union>
     <apply block="only-iron" message="You may only break iron in the spawns">
         <rectangle name="green-spawn" min="143,980" max="219,1007"/>
