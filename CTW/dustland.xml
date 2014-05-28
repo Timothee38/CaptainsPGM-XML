@@ -61,114 +61,114 @@
 								</filter>
 								<filter name="only-purple" parents="deny-players deny-world">
 									<allow><team>purple</team>
-									</allow>
-								</filter>
-								<filter name="no-void" parents="allow-all">
-									<deny><void/></deny></filter>
-								</filters>
-								<regions>
-									<!-- Team base protections -->
-									<apply enter="only-purple" message="You may not enter Purple Team's base">
-										<union name="Purple's base">
-											<rectangle min="-592,-1009" max="-577,-993"/><!-- West side -->
-											<rectangle min="-496,-1009" max="-481,-993"/><!-- East side -->
-										</union>
-									</apply>
-									<apply enter="only-green" message="You may not enter Green Team's base!">
-										<union name="Green's base">
-											<rectangle min="-592,-1120" max="-577,-1104"/><!-- West side -->
-											<rectangle min="-496,-1120" max="-481,-1104"/><!-- East side -->
-										</union>
-									</apply>
-									<apply block="deny-all" message="You may not modify the bases!">
-										<region name="Purple's base"/>
-										<region name="Green's base"/>
-									</apply>
-									<!-- Playable region -->
-									<apply block="no-void" message="You cannot build in the void">
-										<complement>
-											<rectangle name="main-region" min="-632,-1192" max="-441,-921"/><!-- Main --><union>
-											<rectangle min="-584,-1089" max="-489,-1024"/><!-- Building region in center -->
-											<region name="green-base"/>
-											<region name="purple-base"/>
-										</union>
-									</complement>
+								</allow>
+							</filter>
+							<filter name="no-void" parents="allow-all">
+								<deny><void/></deny></filter>
+							</filters>
+							<regions>
+								<!-- Team base protections -->
+								<apply enter="only-purple" message="You may not enter Purple Team's base">
+									<union name="Purple's base">
+										<rectangle min="-592,-1009" max="-577,-993"/><!-- West side -->
+										<rectangle min="-496,-1009" max="-481,-993"/><!-- East side -->
+									</union>
 								</apply>
-								<apply block="deny-all">
-									<negative>
-										<region name="main-region"/>
-									</negative><!-- Can't build outside of the main region, including spawn. -->
+								<apply enter="only-green" message="You may not enter Green Team's base!">
+									<union name="Green's base">
+										<rectangle min="-592,-1120" max="-577,-1104"/><!-- West side -->
+										<rectangle min="-496,-1120" max="-481,-1104"/><!-- East side -->
+									</union>
 								</apply>
-								<!-- Wool room protections --><!-- Purple side -->
-								<apply enter="only-green" use="only-green" block="only-green" message="Do not enter or modify your own wool room!">
-									<rectangle min="-624,-977" max="-608,-961"/><!-- Pink wool -->
-									<rectangle min="-465,-977" max="-449,--961"/><!-- Red wool -->
-								</apply><!-- Green side -->
-								<apply enter="only-purple" use="only-purple" block="only-purple" message="Do not enter or modify your own wool room!">
-									<rectangle min="-624,-1152" max="-608,-1136"/><!-- Orange wool -->
-									<rectangle min="-465,-1152" max="-449,-1136"/><!-- Yellow wool -->
+								<apply block="deny-all" message="You may not modify the bases!">
+									<region name="Purple's base"/>
+									<region name="Green's base"/>
 								</apply>
-								<!-- Wool chest protection -->
-								<apply block="deny-all" message="Do not break the wool chests">
-									<block>-617,9,-969</block>
-									<block>-617,9,-968</block><!-- Pink wool -->
-									<block>-616,9,-969</block>
-									<block>-616,9,-968</block>
-									<block>-456,9,-968</block>
-									<block>-456,9,-969</block><!-- Red wool -->
-									<block>-457,9,-969</block>
-									<block>-457,9,-968</block>
-									<block>-617,9,-1144</block>
-									<block>-616,9,-1144</block><!-- Orange wool -->
-									<block>-617,9,-1145</block>
-									<block>-616,9,-1145</block>
-									<block>-456,9,-1145</block>
-									<block>-457,9,-1145</block><!-- Yellow wool -->
-									<block>-457,9,-1144</block>
-									<block>-456,9,-1144</block>
-								</apply>
-							</regions>
-							<maxbuildheight>25</maxbuildheight>
-							<wools><wools team="green">
-								<wool color="red">
-									<block location="-488,5,-1104"/>
-								</wool>
-								<wool color="pink">
-									<block location="-585,5,-1104"/>
-								</wool>
-							</wools>
-							<wools team="purple">
-								<wool color="orange">
-									<block location="-585,5,-1009"/>
-								</wool>
-								<wool color="yellow">
-									<block location="-488,5,-1009"/>
-								</wool>
-							</wools>
+								<!-- Playable region -->
+								<apply block="no-void" message="You cannot build in the void">
+									<complement>
+										<rectangle name="main-region" min="-632,-1192" max="-441,-921"/><!-- Main --><union>
+										<rectangle min="-584,-1089" max="-489,-1024"/><!-- Building region in center -->
+										<region name="green-base"/>
+										<region name="purple-base"/>
+									</union>
+								</complement>
+							</apply>
+							<apply block="deny-all">
+								<negative>
+									<region name="main-region"/>
+								</negative><!-- Can't build outside of the main region, including spawn. -->
+							</apply>
+							<!-- Wool room protections --><!-- Purple side -->
+							<apply enter="only-green" use="only-green" block="only-green" message="Do not enter or modify your own wool room!">
+								<rectangle min="-624,-977" max="-608,-961"/><!-- Pink wool -->
+								<rectangle min="-465,-977" max="-449,--961"/><!-- Red wool -->
+							</apply><!-- Green side -->
+							<apply enter="only-purple" use="only-purple" block="only-purple" message="Do not enter or modify your own wool room!">
+								<rectangle min="-624,-1152" max="-608,-1136"/><!-- Orange wool -->
+								<rectangle min="-465,-1152" max="-449,-1136"/><!-- Yellow wool -->
+							</apply>
+							<!-- Wool chest protection -->
+							<apply block="deny-all" message="Do not break the wool chests">
+								<block>-617,9,-969</block>
+								<block>-617,9,-968</block><!-- Pink wool -->
+								<block>-616,9,-969</block>
+								<block>-616,9,-968</block>
+								<block>-456,9,-968</block>
+								<block>-456,9,-969</block><!-- Red wool -->
+								<block>-457,9,-969</block>
+								<block>-457,9,-968</block>
+								<block>-617,9,-1144</block>
+								<block>-616,9,-1144</block><!-- Orange wool -->
+								<block>-617,9,-1145</block>
+								<block>-616,9,-1145</block>
+								<block>-456,9,-1145</block>
+								<block>-457,9,-1145</block><!-- Yellow wool -->
+								<block>-457,9,-1144</block>
+								<block>-456,9,-1144</block>
+							</apply>
+						</regions>
+						<maxbuildheight>25</maxbuildheight>
+						<wools><wools team="green">
+							<wool color="red">
+								<block>-488,5,-1104</block>
+							</wool>
+							<wool color="pink">
+								<block> -585,5,-1104</block>
+							</wool>
 						</wools>
-						<toolrepair>
-							<tool>bow</tool>
-							<tool>wooden pickaxe</tool>
-							<tool>wooden axe</tool>
-							<tool>stone sword</tool>
-						</toolrepair>
-						<itemremove>
-							<item>stone sword</item>
-							<item>bow</item>
-							<item>jungle log</item>
-							<item>arrow</item>
-							<item>cooked porkchop</item>
-							<item>leather helmet</item>
-							<item>gold chestplate</item>
-							<item>leather leggings</item>
-							<item>leather boots</item>
-							<item>ladder</item>
-							<item>fence</item>
-							<item>wooden pickaxe</item>
-							<item>wooden axe</item>
-						</itemremove>
-						<killreward>
-							<item amount="1">exp bottle</item>
-						</killreward>
-						<timelock>on</timelock>
-					</map>
+						<wools team="purple">
+							<wool color="orange">
+								<block>-585,5,-1009</block>
+							</wool>
+							<wool color="yellow">
+								<block>-488,5,-1009</block>
+							</wool>
+						</wools>
+					</wools>
+					<toolrepair>
+						<tool>bow</tool>
+						<tool>wooden pickaxe</tool>
+						<tool>wooden axe</tool>
+						<tool>stone sword</tool>
+					</toolrepair>
+					<itemremove>
+						<item>stone sword</item>
+						<item>bow</item>
+						<item>jungle log</item>
+						<item>arrow</item>
+						<item>cooked porkchop</item>
+						<item>leather helmet</item>
+						<item>gold chestplate</item>
+						<item>leather leggings</item>
+						<item>leather boots</item>
+						<item>ladder</item>
+						<item>fence</item>
+						<item>wooden pickaxe</item>
+						<item>wooden axe</item>
+					</itemremove>
+					<killreward>
+						<item amount="1">384</item>
+					</killreward>
+					<timelock>on</timelock>
+				</map>
