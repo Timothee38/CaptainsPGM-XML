@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<map proto="1.2.1">
+<name>Timeless</name>
+<version>1.0</version> 
+<objective>Capture both enemy wools, and break the monument!</objective>
+  <authors>
+    <author contributation="Main Map Builder, XML and terraforming">_CubeRoot</author>
+    <author contributation="Main Map Builder, aesthetics and badass-ness">michael12lp</author>
+  </authors>
+  <contributors>
+    <contributor contributation="Flipping the map">minimitch0199</contributor>
+  </contributors>
+  <include src="tutorial.xml"/>
+  <tutorial>
+    <stage title="Gamemodes">
+        <message>
+            <line>This is a Destory the Monument (DTM) and Capture the Wool (CTW) map.</line>
+            <line>The objective is to break the entire enemy team's monument and grab the two wools on the other team's side and return them to your base.</line>
+        </message>
+        <teleport>
+            <point yaw="-90">-79,241,147</point>
+        </teleport>
+    </stage>
+    <stage title="Bases">
+        <message>
+            <line>This is the Blue team's base. You will spawn with basic items and armour. Red's is exactly the same.</line>
+            <line>There is a TNT spawner on this small island. Jump down into the water to escape the spawn.</line>
+        </message>
+        <teleport>
+            <point yaw="-24">57,195,283</point>
+        </teleport>
+    </stage>
+    <stage title="Diamond Supplies">
+        <message>
+            <line>Here are the diamond supplies for the map.</line>
+            <line>You can craft armor to prepare yourself for battle.</line>
+            <line>Every mushroom contains some diamonds to craft armour out of.</line>
+        </message>
+        <teleport>
+            <point yaw="-77">109,127,238</point>
+        </teleport>
+    </stage>
+    <stage title="TNT Supplies">
+        <message>
+            <line>These three caves all contain TNT supplies. You can use these to make cannons.</line>
+            <line>Remember: Blowing up your own teammates, your side or tampering with cannons that aren't yours are punishable.</line>
+        </message>
+        <teleport>
+            <point yaw="-129">84,133,72</point>
+        </teleport>
+    </stage>
+    <stage title="Wool Rooms">
+        <message>
+            <line>This is one of Red's wool rooms.</line>
+            <line>There are two of these per side, and this is where the wool is kept.</line>
+            <line>Defenders should defend these rooms against enemy invaders who are trying to steal the wool and make it back to their side alive.</line>
+            <line>There are special goodies inside that will help you fight your way out, such as enchanted bows and golden apples.</line>
+        </message>
+        <teleport>
+            <point yaw="179">-10,131,89</point>
+        </teleport>
+    </stage>
+    <stage title="Victory Monument">
+        <message>
+            <line>This is the Victory Monument. To win, you must bring both wools back to your side and place them here.</line>
+            <line>Note that the other team has identical victory monuments for their respective wools.</line>
+        </message>
+        <teleport>
+            <point yaw="-179">19,117,27</point>
+        </teleport>
+    </stage>
+    <stage title="Monument">
+        <message>
+            <line>This is the Monument. It is made entirely of quartz blocks.</line>
+            <line>TNT can break the monument. This is inside the biggest clock tower on the map, above the victory monument.</line>
+            <line>Defenders should defend this room against enemy invaders who are trying to destroy the monument.</line>
+        </message>
+        <teleport>
+            <point yaw="51">23,168,14</point>
+        </teleport>
+    </stage>
+  </tutorial>
+  <teams>
+    <team color="dark red" max="40" max-overfill="50">Red Team</team>
+    <team color="blue" max="40" max-overfill="50">Blue Team</team>
+  </teams>
+<maxbuildheight>206</maxbuildheight>
+<destroyables name="Monument" materials="quartz" completion="100%">
+    <destroyable owner="blue">
+       <cuboid min="38,165,273" max="44,176,279"/>
+    </destroyable>
+    <destroyable owner="red">
+       <cuboid min="22,165,14" max="16,176,20"/>
+    </destroyable>
+</destroyables>
+  <wools team="red">
+    <wool color="blue">
+      <block>18,116,14</block>
+    </wool>
+    <wool color="light blue">
+      <block>20,116,14</block>
+    </wool>
+  </wools>
+  <wools team="blue">
+    <wool color="orange">
+      <block>42,116,279</block>
+    </wool>
+    <wool color="pink">
+      <block>40,116,279</block>
+    </wool>
+  </wools>
+<spawns>
+    <spawn team="red" kit="red" yaw="0">
+        <cuboid min="-4,196,-0" max="-0,196,-3"/>
+    </spawn>
+    <spawn team="blue" kit="blue" yaw="180">
+        <cuboid min="61,196,297" max="65,196,294"/>
+    </spawn>
+    <default yaw="90">
+        <cuboid min="-81,241,146" max="-79,241,148"/>
+    </default>
+</spawns>
+<kits>
+    <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1">bow</item>
+        <item slot="28" amount="64">arrow</item>
+        <item slot="2">iron pickaxe</item>
+        <item slot="3">iron axe</item>
+        <item slot="4" enchantment="silktouch:1">shears</item>
+        <item slot="5">water bucket</item>
+        <item slot="6" amount="64">ladder</item>
+        <item slot="7" amount="32">birch planks</item>
+        <item slot="8" amount="32">steak</item>
+    </kit>
+    <kit name="red" parents="spawn">
+        <helmet color="cd0000">leather helmet</helmet>
+        <chestplate>iron chestplate</chestplate>
+        <leggings>gold leggings</leggings>
+        <boots color="cd0000">leather boots</boots>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <helmet color="0066cc">leather helmet</helmet>
+        <chestplate>iron chestplate</chestplate>
+        <leggings>gold leggings</leggings>
+        <boots color="0066cc">leather boots</boots>
+    </kit>
+</kits>
+<itemremove>
+    <item>leather helmet</item>
+    <item>iron chestplate</item>
+    <item>gold leggings</item>
+    <item>leather boots</item>
+    <item>gold block</item>
+    <item>iron sword</item>
+    <item>bow</item>
+    <item>iron pickaxe</item>
+    <item>iron axe</item>
+    <item>shears</item>
+</itemremove>
+  <filters>
+    <filter name="only-blue" parents="deny-players">
+      <allow><team>blue</team></allow>
+    </filter>
+    <filter name="only-red" parents="deny-players">
+      <allow><team>red</team></allow>
+    </filter>
+    <filter name="wool-room-break" parents="deny-blocks">
+    <allow>
+      <block>35:1</block>
+      <block>35:6</block>
+      <block>35:3</block>
+      <block>35:11</block>
+    </allow>
+    </filter>
+    <filter name="no-tnt-damage" parents="deny-world">
+    </filter>
+  </filters>
+  <regions>
+    <union name="blue-wool-rooms">
+      <cuboid name="pink" min="56,152,38" max="44,114,51"/>
+      <cuboid name="orange" min="-15,112,64" max="-4,151,77"/>
+    </union>
+    <union name="red-wool-rooms">
+      <cuboid name="lightblue" min="65,151,216" max="76,114,229"/>
+      <cuboid name="blue" min="4,152,255" max="16,114,242"/>
+    </union>
+    <apply enter="only-blue" message="You may not enter your own team's wool room!">
+      <union name="blue-wool-rooms">
+        <cuboid name="pink-wool-room" min="56,118,50" max="43,153,39"/>
+        <cuboid name="orange-wool-room" min="-16,149,65" max="-3,116,76"/>
+      </union>
+    </apply>
+    <apply enter="only-red" message="You may not enter your own team's wool room!">
+      <union mame="red-wool-rooms">
+        <cuboid name="lightblue-wool-room" min="64,116,216" max="76,151,228"/>
+        <cuboid name="blue-wool-room" min="4,118,243" max="17,153,254"/>
+      </union>
+    </apply>
+    <apply block="wool-room-break" message="You cannot modify the wool room!">
+      <union mame="wool-rooms">
+        <cuboid name="pink-wool-room" min="56,152,38" max="44,114,51"/>
+        <cuboid name="orange-wool-room" min="-15,112,64" max="-4,151,77"/>
+        <cuboid name="lightblue-wool-room" min="65,151,216" max="76,114,229"/>
+        <cuboid name="blue-wool-room" min="4,152,255" max="16,114,242"/>
+      </union>
+    </apply>
+    <apply enter="only-blue" message="You may not enter the other team's Wool Monument Room!">
+        <cuboid name="blue-woolmonument-room" min="44,116,273" max="38,120,279"/>
+    </apply>
+    <apply enter="only-red" message="You may not enter the other team's Wool Monument Room!">
+        <cuboid name="red-woolmonument-room" min="16,116,20" max="22,120,14"/>
+    </apply>
+    <apply enter="no-tnt-damage" message="TNT will not damage the Wool Rooms.">
+      <union name="wool-room-all">
+        <cuboid name="pink-wool-room" min="56,152,38" max="44,114,51"/>
+        <cuboid name="orange-wool-room" min="-15,112,64" max="-4,151,77"/>
+        <cuboid name="lightblue-wool-room" min="65,151,216" max="76,114,229"/>
+        <cuboid name="blue-wool-room" min="4,152,255" max="16,114,242"/>
+      </union>
+    </apply>
+  </regions>
+</map>
