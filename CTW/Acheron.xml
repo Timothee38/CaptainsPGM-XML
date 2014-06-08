@@ -59,39 +59,9 @@
         <line>The middle two blocks of iron will regenerate to avoid no iron in the event of a long game.</line>
     </stage>
 </tutorial>
-<maxbuildheight>57</maxbuildheight>
-<wools team="green">
-    <wool color="orange">
-        <block>182,11,1281</block>
-    </wool>
-    <wool color="purple">
-        <block>180,11,1281</block>
-    </wool>
-</wools>
-<wools team="purple">
-    <wool color="lime">
-        <block>180,11,983</block>
-    </wool>
-    <wool color="pink">
-        <block>182,11,983</block>
-    </wool>
-</wools>
-<cores material="obsidian" leak="4" mode-changes="true">
-    <core team="green">
-        <cuboid min="178,16,1110" max="184,22,1103"/>
-    </core>
-    <core team="purple">
-        <cuboid min="178,16,1161" max="184,22,1155"/>
-    </core>
-</cores>
-<modes>
-    <mode after="15m" material="redstone block" name="`4Redstone Core Mode!"/>
-    <mode after="25m" material="gold block" name="`6Gold Core Mode!"/>
-    <mode after="45m" material="glass" name="Glass Core Mode!"/>
-</modes>
 <teams>
     <team color="green" max="64" max-overfill="100">Green Team</team>
-    <team color="purple" max="64" max-overfill="100">Purple Team</team>
+    <team color="dark purple" max="64" max-overfill="100">Purple Team</team>
 </teams>
 <kits>
     <kit name="spawn">
@@ -105,39 +75,137 @@
     </kit>
 </kits>
 <spawns>
-    <spawn team="green" kit="green" safe="true">
-        <cuboid min="179,10,990" max="183,10,994"/>
+    <spawn team="green" kit="green">
+        <cylinder base="181,10,992" radius="2" height="0"/>
     </spawn>
-    <spawn team="purple" kit="purple" safe="true">
-        <cuboid min="179,10,1270" max="183,10,994"/>
+    <spawn team="purple" kit="purple">
+        <cylinder base="181,10,1272" radius="2" height="0"/>
     </spawn>
     <default>
-        <circle center="291,61,1132" radius="3"/>
+        <cylinder base="291,61,1132" radius="3" height="0"/>
     </default>
 </spawns>
-<renewables>
-    <renewable rate="0.5" grow="true" particles="false" sound="false" avoid-entities="true">
-        <region>
-            <union name="renewable-iron">
-                <cuboid min="204,10,1278" max="201,13,1276"/><!--Purple, Right (1)-->
-                <cuboid min="210,10,1278" max="208,13,1275"/><!--Purple, Right (2)-->
-                <cuboid min="158,10,1276" max="160,13,1278"/><!--Purple, Left (1)-->
-                <cuboid min="152,10,1276" max="154,13,1278"/><!--Purple, Left (2)-->
-                <cuboid min="158,10,986" max="160,13,988"/><!--Green, Right (1)-->
-                <cuboid min="155,10,988" max="152,10,986"/><!--Green, Right (2)-->
-                <cuboid min="204,10,988" max="202,13,986"/><!--Green, Left (1)-->
-                <cuboid min="210,10,988" max="208,13,986"/><!--Green, Left (2)-->
-            </union>
-        </region>
-        <renew>iron block</renew>
-        <replace>air</replace>
-    </renewable>
-</renewables>
+<regions>
+    <!-- the wool rooms green have to get -->
+    <union name="green-wool-rooms">
+        <circle name="green-wool-room" center="113,1178" radius="10"/>
+        <circle name="pink-wool-room" center="249,1178" radius="10"/>
+    </union>
+    <!-- the wool rooms purple have to get -->
+    <union name="purple-wool-rooms">
+        <circle name="purple-wool-room" center="113,1086" radius="10"/>
+        <circle name="orange-wool-room" center="249,1086" radius="10"/>
+    </union>
+    <apply block="only-iron" message="You may only break iron in the spawns">
+        <rectangle name="green-spawn" min="143,980" max="219,1007"/>
+        <rectangle name="purple-spawn" min="219,1284" max="143,1257"/>
+    </apply>
+    <apply enter="only-green" message="You may not enter your own teams wool room">
+        <region name="green-wool-rooms"/>
+    </apply>
+    <apply enter="only-purple" message="You may not enter your own teams wool room">
+        <region name="purple-wool-rooms"/>
+    </apply>
+    <apply block="wool-room-break" message="You may only break gold and diamond blocks in the wool room to gain loot!">
+        <region name="green-wool-rooms"/>
+        <region name="purple-wool-rooms"/>
+    </apply>
+    <apply block="no-void" messgae="you may not edit the void!">
+        <negative>
+            <rectangle min="-oo,oo" max="oo,-oo"/>
+        </negative>
+    </apply>
+</regions>
+<portals>
+    <!-- green spawn portal -->
+    <portal z="35" filter="only-green">
+        <block>181,10,1001</block>
+    </portal>
+    <!-- green back to spawn -->
+    <portal x="@181" y="@9.5" z="@1000" filter="only-green">
+        <cuboid min="180,10,1034" max="182,11,1035"/>
+    </portal>
+    <!-- green second level portals -->
+    <portal x="@160" y="@19.5" z="@1062" filter="only-green">
+        <block>172,10,1068</block>
+    </portal>
+    <portal x="@160" y="@19.5" z="@1062" filter="only-green">
+        <block>172,10,1056</block>
+    </portal>
+    <portal x="@202" y="@19.5" z="@1062" filter="only-green">
+        <block>190,10,1056</block>
+    </portal>
+    <portal x="@202" y="@19.5" z="@1062" filter="only-green">
+        <block>190,10,1068</block>
+    </portal>
+    <!-- green down to first level portals -->
+    <portal y="-10" filter="only-green">
+        <block>201,20,1062</block>
+    </portal>
+    <portal y="-10" filter="only-green">
+        <block>161,20,1062</block>
+    </portal>
+    <!-- green to wool room portals -->
+    <portal x="@223" y="@20" z="@1081" yaw="45" filter="only-green">
+        <block>225,10,1074</block>
+    </portal>
+    <!-- green back from wall room -->
+    <portal x="@223" y="@10" z="@1074" yaw="90" filter="only-green">
+        <block>225,20,1079</block>
+    </portal>
+    <portal x="@139" y="@20" z="@1081" yaw="-45" filter="only-green">
+        <block>137,10,1074</block>
+    </portal>
+    <portal x="@140" y="@10" z="@1074" yaw="-90" filter="only-green">
+        <block>137,20,1079</block>
+    </portal>
+    <!-- purple spawn portal -->
+    <portal z="-35" filter="only-purple">
+        <block>181,10,1264</block>
+    </portal>
+    <!-- purple back from spawn -->
+    <portal x="@181" y="@9.5" z="@1265" filter="only-purple">
+        <cuboid min="180,10,1229" max="182,11,1230"/>
+    </portal>
+    <!-- purple to second floor -->
+    <portal x="@202" y="@19.5" z="@1202" filter="only-purple">
+        <block>189,10,1208</block>
+    </portal>
+    <portal x="@202" y="@19.5" z="@1202" filter="only-purple">
+        <block>189,10,1196</block>
+    </portal>
+    <portal x="@160" y="@19.5" z="@1202" filter="only-purple">
+        <block>173,10,1208</block>
+    </portal>
+    <portal x="@160" y="@19.5" z="@1202" filter="only-purple">
+        <block>173,10,1196</block>
+    </portal>
+    <!-- purple to first floor -->
+    <portal y="-10" filter="only-purple">
+        <block>160,20,1202</block>
+    </portal>
+    <portal y="-10" filter="only-purple">
+        <block>202,20,1202</block>
+    </portal>
+    <!-- wool room portals -->
+    <portal x="@223" y="@20" z="@1183" yaw="130" filter="only-purple">
+        <block>225,10,1190</block>
+    </portal>
+    <portal x="@224" y="@9.5" z="@1190" yaw="90" filter="only-purple">
+        <block>224,20,1184</block>
+    </portal>
+    <portal x="@139" y="@20" z="@1183" yaw="-130" filter="only-purple">
+        <block>137,10,1190</block>
+    </portal>
+    <portal x="@139" y="@10" z="@1190" yaw="-90" filter="only-green">
+        <block>138,20,1184</block>
+    </portal>
+</portals>
 <blockdrops>
     <rule>
         <region>
-            <union name="purple-wool-rooms"/>
-            <union name="green-wool-rooms"/>
+            <region name="purple-wool-rooms"/>
+            <region name="green-wool-rooms"/>
         </region>
         <filter>
             <block>diamond block</block>
@@ -152,8 +220,8 @@
     </rule>
     <rule>
         <region>
-            <union name="purple-wool-rooms"/>
-            <union name="green-wool-rooms"/>
+            <region name="purple-wool-rooms"/>
+            <region name="green-wool-rooms"/>
         </region>
         <filter>
             <block>gold block</block>
@@ -186,6 +254,7 @@
         <allow>
             <block>gold block</block>
             <block>diamond block</block>
+            <block>web</block>
         </allow>
     </filter>
     <filter name="no-void" parents="allow-all">
@@ -194,115 +263,49 @@
         </deny>
     </filter>
 </filters>
-<regions>
-    <union name="purple-wool-rooms">
-        <cuboid name="pink" min="256,10,1184" max="244,20,1173"/>
-        <cuboid name="lime" min="107,10,1172" max="119,20,1183"/>
-    </union>
-    <union name="green-wool-rooms">
-        <cuboid name="orange" min="256,10,1093" max="244,20,1081"/>
-        <cuboid name="purple" min="107,10,1080" max="119,20,1091"/>
-    </union>
-    <apply block="only-iron" message="You may only break iron in the spawns">
-        <rectangle name="green-spawn" min="143,980" max="219,1007"/>
-        <rectangle name="purple-spawn" min="219,1284" max="143,1257"/>
-    </apply>
-    <apply enter="only-green" message="You may not enter your own teams wool room">
-        <union name="green-wool-rooms">
-            <cylinder name="lime-wool-room" center="113,10,1178" radius="8" height="20"/>
-            <cylinder name="pink-wool-room" center="249,10,1178" radius="8" height="20"/>
-        </union>
-    </apply>
-    <apply enter="only-purple" message="You may not enter your own teams wool room">
-        <cylinder name="orange-wool-room" center="249,10,1086" radius="8" height="20"/>
-        <cylinder name="purple-wool-room" center="113,10,1086" radius="8" height="20"/>
-
-    </apply>
-    <apply block="wool-room-break" message="you may only break gold and diamond blocks in the wool room to gain loot!">
-        <cylinder name="orange-wool-room" center="249,10,1086" radius="8" height="20"/>
-        <cylinder name="purple-wool-room" center="113,10,1086" radius="8" height="20"/>
-        <cylinder name="lime-wool-room" center="113,10,1178" radius="8" height="20"/>
-        <cylinder name="pink-wool-room" center="249,10,1178" radius="8" height="20"/>
-    </apply>
-    <apply block="no-void" messgae="you may not edit the void!">
-        <negative>
-            <rectangle min="-oo,oo" max="oo,-oo"/>
-        </negative>
-    </apply>
-</regions>
-<portals>
-    <portal z="33" filter="only-green">
-        <block>181,10,1001</block>
-    </portal>
-    <portal x="@181" y="@9.5" z="@1000" filter="only-green">
-        <cuboid min="180,10,1034" max="182,11,1034"/>
-    </portal>
-    <portal x="@160" y="@19.5" z="@1062" filter="only-green">
-        <block>172,10,1068</block>
-    </portal>
-    <portal x="@160" y="@19.5" z="@1062" filter="only-green">
-        <block>172,10,1056</block>
-    </portal>
-    <portal x="@202" y="@19.5" z="@1062" filter="only-green">
-        <block>190,10,1056</block>
-    </portal>
-    <portal x="@202" y="@19.5" z="@1062" filter="only-green">
-        <block>190,10,1068</block>
-    </portal>
-    <portal y="-10" filter="only-green">
-        <block>201,20,1062</block>
-    </portal>
-    <portal y="-10" filter="only-green">
-        <block>161,20,1062</block>
-    </portal>
-    <portal x="@225" y="@20" z="@1079" yaw="45" filter="only-green">
-        <block>225,10,1074</block>
-    </portal>
-    <portal x="@225" y="@10" z="@1074" yaw="90" filter="only-green">
-        <block>225,20,1079</block>
-    </portal>
-    <portal x="@137" y="@20" z="@1079" yaw="-45" filter="only-green">
-        <block>137,10,1074</block>
-    </portal>
-    <portal x="@137" y="@10" z="@1074" yaw="-90" filter="only-green">
-        <block>137,20,1079</block>
-    </portal>
-    <portal z="-33" filter="only-purple">
-        <block>181,10,1263</block>
-    </portal>
-    <portal x="@181" y="@9.5" z="@1264" filter="only-purple">
-        <cuboid min="180,10,1230" max="182,11,1230"/>
-    </portal>
-    <portal x="@202" y="@19.5" z="@1202" filter="only-purple">
-        <block>192,10,1280</block>
-    </portal>
-    <portal x="@202" y="@19.5" z="@1202" filter="only-purple">
-        <block>190,10,1196</block>
-    </portal>
-    <portal x="@160" y="@19.5" z="@1202" filter="only-purple">
-        <block>172,10,1208</block>
-    </portal>
-    <portal x="@160" y="@19.5" z="@1202" filter="only-purple">
-        <block>172,10,1196</block>
-    </portal>
-    <portal y="-10" filter="only-purple">
-        <block>161,20,1202</block>
-    </portal>
-    <portal y="-10" filter="only-purple">
-        <block>201,20,1202</block>
-    </portal>
-    <portal x="@225" y="@20" z="@1185" yaw="130" filter="only-purple">
-        <block>225,10,1190</block>
-    </portal>
-    <portal x="@224" y="@9.5" z="@1190" yaw="90" filter="only-purple">
-        <block>225,20,1185</block>
-    </portal>
-    <portal x="@137" y="@20" z="@1185" yaw="-130" filter="only-purple">
-        <block>137,10,1190</block>
-    </portal>
-    <portal x="@137" y="@10" z="@1190" yaw="-90" filter="only-green">
-        <block>137,20,1185</block>
-    </portal>
-</portals>
+<wools team="purple">
+    <wool color="orange">
+        <block>182,11,1281</block>
+    </wool>
+    <wool color="purple">
+        <block>180,11,1281</block>
+    </wool>
+</wools>
+<wools team="green">
+    <wool color="lime">
+        <block>180,11,983</block>
+    </wool>
+    <wool color="pink">
+        <block>182,11,983</block>
+    </wool>
+</wools>
+<cores material="obsidian" leak="4" mode-changes="true">
+    <core team="green">
+        <cuboid min="186,15,1103" max="178,23,1110"/>
+    </core>
+    <core team="purple">
+        <cuboid min="178,15,1163" max="186,23,1155"/>
+    </core>
+</cores>
+<modes>
+    <mode after="15m" material="redstone block" name="`4REDSTONE CORE MODE"/>
+    <mode after="25m" material="gold block" name="`6GOLD CORE MODE"/>
+    <mode after="45m" material="glass" name="GLSASS CORE MODE"/>
+</modes>
+<itemremove>
+    <item>arrow</item>
+    <item>log</item>
+    <item>iron spade</item>
+    <item>glass</item>
+    <item>stained clay</item>
+    <item>water bucket</item>
+    <item>cooked beef</item>
+    <item>leather helmet</item>
+</itemremove>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+</toolrepair>
 <timelock>on</timelock>
+<maxbuildheight>57</maxbuildheight>
 </map>
