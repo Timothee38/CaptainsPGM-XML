@@ -60,11 +60,20 @@
     </stage>
 </tutorial>
 <teams>
-    <team color="green" max="64" max-overfill="100">Green Team</team>
-    <team color="dark purple" max="64" max-overfill="100">Purple Team</team>
+    <team color="green" max="50" max-overfill="65">Green Team</team>
+    <team color="dark purple" max="50" max-overfill="65">Purple Team</team>
 </teams>
 <kits>
     <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1" enchantment="arrow infinite:1">bow</item>
+        <item slot="2">diamond pickaxe</item>
+        <item slot="3" enchantment="durability:1;dig speed:1">iron shovel</item>
+        <item slot="4" enchantment="durability:1;dig speed:1">iron axe</item>
+        <item slot="5" amount="32">spruce log</item>
+        <item slot="6" amount="64">glass</item>
+        <item slot="7" amount="64" damage="5">159</item><!--Stained clay-->
+        <item slot="8" amount="64">steak</item>
         <item slot="9">arrow</item>
     </kit>
     <kit name="green" parents="spawn">
