@@ -1,23 +1,15 @@
 <?xml version="1.0"?>
 <map proto="1.3.2">
-    <name>Reef</name>
+    <name>Reef Blitz</name>
     <version>1.0.0</version>
-    <objective>Kill as many players in the time limit as possible</objective>
-
-    <rules>
-        <rule>Knockback is disabled</rule>
-        <rule>Drowing is disabled</rule>
-    </rules>
-
+    <objective>Kill all players from the opposite team.</objective>
     <authors>
         <author contributaion="Main Map Design">Timothee38</author>
         <author contributaion="Map Design and XML">Captain_Elliott</author>
     </authors>
-
     <contributator>
         <contributor contributaion="Feedback">Lyyris</contributor>
     </contributator>
-
     <teams>
         <team color="red" max="30" max-overfill="40">Red Team</team>
         <team color="orange" max="30" max-overfill="40">Blue Team</team>
@@ -43,15 +35,14 @@
         </kit>
         <kit name="spawn" parents="all">
             <item slot="0" damage="-3000">stone sword</item>
-            <item slot="28">arrow</item>
-            <item slot="1" damage="-3000" enchantment="arrow infinite">bow</item>
-            <item slot="2" amount="64">golden carrots</item>
-            <chestplate attributes="generic.knockbackResistance:add:1">chainmail chestplate</chestplate>
+            <item slot="28" amount="3">arrow</item>
+            <item slot="1" damage="-3000">bow</item>
+            <item slot="2" amount="64">golden carrot</item>
+            <chestplate damage="-3000">chainmail chestplate</chestplate>
             <potion duration="5" amplifier="5">damage resistance</potion>
-
         </kit>
         <kit name="red" parents="spawn">
-            <helmet damage="14">95</helmet>
+            <helmet damage="14">20</helmet>
             <leggings color="993333" damage="-3000">leather pants</leggings>
             <boots color="993333" damage="-3000">leather boots</boots>
         </kit>
@@ -61,21 +52,11 @@
             <boots color="D87F33" damage="-3000">leather boots</boots>
         </kit>
     </kits>
-
-    <disabledamage>
-        <damage ally="false" self="false" enemy="false" other="false">DROWNING</damage>
-    </disabledamage>
-
-    <score>
-        <time>600</time>
-    </score>
-
     <filters>
         <filter name="no-void" parents="allow-all">
             <deny><void/></deny>
         </filter>
     </filters>
-
     <regions>
         <apply block="deny-blocks">
             <cuboid min="oo,oo,oo" max="-oo,-oo,-oo"/>
@@ -84,24 +65,24 @@
             <cuboid min="oo,oo,oo" max="-oo,-oo,-oo"/>
         </apply>
     </regions>
-
-    <killreward>
-        <item name="Gold Coins" lore="`4You may use this to craft">Gold Ingot</item>
-    </killreward>
-
     <itemremove>
         <item>ink sac</item>
         <item>chainmail chestplate</item>
-        <item>95</item><!--Stained glass-->
+        <item>20</item>
         <item>leather pants</item>
         <item>leather boots</item>
         <item>arrow</item>
         <item>golden carrot</item>
     </itemremove>
-
     <toolrepair>
         <tool>stone sword</tool>
         <tool>bow</tool>
     </toolrepair>
-
+    <blitz>
+        <time>10m</time>
+        <lives>1</lives>
+        <broadcastLives>false</broadcastLives>
+        <title>Blitz</title>
+</blitz>
+<include src="blitz-global.xml"/>
 </map>
